@@ -1,1 +1,61 @@
-<p>Hello World</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>
+        <img style="height: 100px; width: 100px;" src="./logo.jpg">
+        Print and bulk postage solutions for political parties
+    </h1>
+
+    <ul>
+        <li>
+            Addressed leaflets and letters delivered from just 45p per item
+        </li>
+    </ul>
+
+    <form>
+        <label>How many items?</label>
+        <input id="amount" name="amount" placeholder="5000">
+
+        <br/>
+        <input checked type="checkbox" id="print" name="print">
+        <label for="print">Printing</label>
+        <br/>
+        <input checked type="checkbox" id="post" name="post">
+        <label for="post">Bulk postage</label>
+        
+        <br/>
+        <input type="radio" name="mailing" id="single-sided-full-colour" value="single-sided-full-colour">
+        <label for="single-sided-full-colour">Single sided A4 full colour (19p)</label>
+        <br/>
+        <input checked type="radio" name="mailing" id="double-sided-full-colour" value="double-sided-full-colour">
+        <label for="double-sided-full-colour">Double sided A4 full colour (21p)</label>
+    
+        <br/>
+        <input checked type="checkbox" id="insert" name="insert">
+        <label for="insert">Include double sided A4 full colour insert? (4p)</label>
+        
+        <br/>
+        <input checked type="checkbox" id="freepost" name="freepost">
+        <label for="freepost">Include preprinted return envelope? (3p)</label>
+        
+        <br/>
+        <label>How many will be delivered by your volunteers? (£39.99 Courier Fee)</label>
+        <input id="volunteer-amount" name="volunteer-amount" placeholder="5000">
+
+        <br/>
+        <label>How many will be delivered by Eryri Press? (45p)</label>
+        <input id="volunteer-amount" name="volunteer-amount" placeholder="5000">
+
+        <br/>
+        <p>Your quote: <span id="total"></span></p>
+        <button>Purchase</button>
+    </form>
+
+</body>
+</html>
