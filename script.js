@@ -7,7 +7,12 @@ document.addEventListener('DOMContentLoaded', function() {
     function handleInputChange() {
         const amount = parseInt(document.getElementById('amount').value) || 0;
         const volunteerAmount = parseInt(document.getElementById('volunteer-amount').value) || 0;
+        const postageOnlyChecked = document.getElementById('postage-only').checked;
         const eryriAmount = amount - volunteerAmount;
+
+        for(const input of [ 'single-sided-full-colour', 'double-sided-full-colour', 'insert', 'freepost']) {
+            document.getElementById(input).disabled = postageOnlyChecked;
+        }
 
         document.getElementById('eryri-amount').value = eryriAmount;
 
@@ -16,8 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function calculateTotal() {
         const amount = parseInt(document.getElementById('amount').value) || 0;
-        const printChecked = document.getElementById('print').checked;
-        const postChecked = document.getElementById('post').checked;
+        const postageOnlyChecked = document.getElementById('postage-only').checked;
         const singleSidedChecked = document.getElementById('single-sided-full-colour').checked;
         const doubleSidedChecked = document.getElementById('double-sided-full-colour').checked;
         const insertChecked = document.getElementById('insert').checked;
@@ -27,25 +31,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let total = 0;
 
-        if (printChecked) {
+        if (!postageOnlyChecked) {
             if (singleSidedChecked) {
                 total += amount * 0.19;
-            } else if (doubleSidedChecked) {
+            }
+            else if (doubleSidedChecked) {
                 total += amount * 0.21;
+            }
+
+            if (insertChecked) {
+                total += amount * 0.04;
+            }
+    
+            if (freepostChecked) {
+                total += amount * 0.03;
             }
         }
 
-        if (insertChecked) {
-            total += amount * 0.04;
-        }
-
-        if (freepostChecked) {
-            total += amount * 0.03;
-        }
-
-        if (postChecked) {
-            total += eryriAmount * 0.45;
-        }
+        total += eryriAmount * 0.45;
 
         if (volunteerAmount > 0) {
             total += 39.99;
