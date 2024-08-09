@@ -33,10 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (!postageOnlyChecked) {
             if (singleSidedChecked) {
-                total += amount * 0.19;
+                total += amount * 0.26;
             }
             else if (doubleSidedChecked) {
-                total += amount * 0.21;
+                total += amount * 0.28;
             }
 
             if (insertChecked) {
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        total += eryriAmount * 0.45;
+        total += eryriAmount * 0.64;
 
         if (volunteerAmount > 0) {
             total += 39.99;
