@@ -5,22 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eryri Press</title>
     <link rel="icon" type="image/x-icon" href="./logo.jpg">
-    <script src="./script.js"></script>
-    <link rel="stylesheet" href="./styles.css">    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .header {
+            background-color: #004080;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .header img {
+            height: 80px;
+            margin-bottom: 10px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .content {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .btn-top {
+            background-color: #004080;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .btn-top:hover {
+            background-color: #003366;
+            color: white;
+        }
+        form {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        form label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        form input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .checkbox-label, .radio-label {
+            margin-bottom: 15px;
+        }
+        .checkbox-label input, .radio-label input {
+            margin-right: 10px;
+        }
+        p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .footer img {
+            height: 80px;
+            margin-top: 10px;
+        }
+        .footer p {
+            margin: 10px 0;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
-    <h1>
-        Print and bulk postage solutions for businesses, charities and political parties.
-    </h1>
-    <header class="header">
-        <a href="#" class="btn-top">Click Here for Our Marked Register Service</a>
-        <h1>Marked Register Data Entry Service</h1>
-    </header>
-    <em>
-            Addressed leaflets and letters delivered from just 64p per item. For the "postage only" option, we will collect addressed items from your office and deliver them within ten working days. Items must be less than 100g and presented in DL or C5 size envelopes.
-    </em>
+    <div class="header">
+        <img src="./logo.jpg" alt="Eryri Press Logo">
+        <h1>Print and Bulk Postage Solutions for Businesses, Charities, and Political Parties</h1>
+    </div>
 
-    <form>
+    <div class="content">
+        <div class="text-center">
+            <a href="https://eryripress.co.uk/data/" class="btn-top">CLICK HERE FOR OUR MARKED REGISTER SERVICE</a>
+        </div>
+        
+        <em>
+            Addressed leaflets and letters delivered from just 64p per item. For the "postage only" option, we will collect addressed items from your office and deliver them within ten working days. Items must be less than 100g and presented in DL or C5 size envelopes.
+        </em>
+        <form>
         <label>How many items?</label>
         <input id="amount" name="amount" type="number" placeholder="1500 minimum">
     
