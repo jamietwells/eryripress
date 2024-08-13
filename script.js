@@ -24,32 +24,35 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function calculateTotal() {
-        const amount = parseInt(elements.amount.value) || 0;
-        const postageOnlyChecked = elements.postageOnly.checked;
-        const singleSidedChecked = elements.singleSided.checked;
-        const doubleSidedChecked = elements.doubleSided.checked;
-        const insertChecked = elements.insert.checked;
-        const freepostChecked = elements.freepost.checked;
+    const amount = parseInt(elements.amount.value) || 0;
+    const postageOnlyChecked = elements.postageOnly.checked;
+    const singleSidedChecked = elements.singleSided.checked;
+    const doubleSidedChecked = elements.doubleSided.checked;
+    const insertChecked = elements.insert.checked;
+    const freepostChecked = elements.freepost.checked;
 
-        let total = amount * 0.64;
+    let total = 0;
 
-        if (!postageOnlyChecked) {
-            if (singleSidedChecked) {
-                total += amount * 0.26;
-            }
-            else if (doubleSidedChecked) {
-                total += amount * 0.28;
-            }
+    if (postageOnlyChecked) {
+        total = 40.00 + (amount * 0.64);
+    } else {
+        total = amount * 0.64;
 
-            if (insertChecked) {
-                total += amount * 0.04;
-            }
-    
-            if (freepostChecked) {
-                total += amount * 0.03;
-            }
+        if (singleSidedChecked) {
+            total += amount * 0.26;
+        } else if (doubleSidedChecked) {
+            total += amount * 0.28;
         }
 
-        document.getElementById('total').innerText = total.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' });
+        if (insertChecked) {
+            total += amount * 0.04;
+        }
+
+        if (freepostChecked) {
+            total += amount * 0.03;
+        }
+    }
+
+    document.getElementById('total').innerText = total.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' });
     }
 });
