@@ -104,47 +104,49 @@
         <em>
             Addressed leaflets and letters delivered from just 64p per item. For the "postage only" option, we will collect addressed items from your office and deliver them within ten working days. Items must be less than 100g and presented in DL or C5 size envelopes.
         </em>
-        <form>
-        <label>How many items?</label>
-        <input id="amount" name="amount" type="number" placeholder="1500 minimum">
-    
-        <div class="checkbox-label">
-            <input type="checkbox" id="postage-only" name="postage-only">
-            <label for="postage-only">Postage only</label>
-        </div>
 
-        <label>If we are printing the items, how many will be delivered by your volunteers? (courier fee: £39.99)</label>
-        <input id="volunteer-amount" name="volunteer-amount" type="number" value="0" min="0" step="1">
+        <form>
+            <label for="amount">How many items?</label>
+            <input id="amount" name="amount" type="number" placeholder="1500 minimum">
         
-        <label>How many will be delivered by Eryri Press? (64p)</label>
-        <input id="eryri-amount" name="eryri-amount" type="number" value="0" readonly>
+            <div class="checkbox-label">
+                <input type="checkbox" id="postage-only" name="postage-only">
+                <label for="postage-only">Postage only</label>
+            </div>
+
+            <label for="volunteer-amount">If we are printing the items, how many will be delivered by your volunteers? (courier fee: £39.99)</label>
+            <input id="volunteer-amount" name="volunteer-amount" type="number" value="0" min="0" step="1">
+            
+            <label for="eryri-amount">How many will be delivered by Eryri Press? (64p)</label>
+            <input id="eryri-amount" name="eryri-amount" type="number" value="0" readonly>
+            
+            <div class="radio-label">
+                <input type="radio" name="mailing" id="single-sided-full-colour" value="single-sided-full-colour">
+                <label for="single-sided-full-colour">Single sided A4 full colour (26p)</label>
+            </div>
+            <div class="radio-label">
+                <input checked type="radio" name="mailing" id="double-sided-full-colour" value="double-sided-full-colour">
+                <label for="double-sided-full-colour">Double sided A4 full colour (28p)</label>
+            </div>
         
-        <div class="radio-label">
-            <input type="radio" name="mailing" id="single-sided-full-colour" value="single-sided-full-colour">
-            <label for="single-sided-full-colour">Single sided A4 full colour (26p)</label>
-        </div>
-        <div class="radio-label">
-            <input checked type="radio" name="mailing" id="double-sided-full-colour" value="double-sided-full-colour">
-            <label for="double-sided-full-colour">Double sided A4 full colour (28p)</label>
-        </div>
-    
-        <div class="checkbox-label">
-            <input checked type="checkbox" id="insert" name="insert">
-            <label for="insert">Include double sided A4 full colour insert? (4p)</label>
-        </div>
-        
-        <div class="checkbox-label">
-            <input checked type="checkbox" id="freepost" name="freepost">
-            <label for="freepost">Include preprinted return envelope? (3p)</label>
-        </div>
-        
-        <p>Your quote: <span id="total">£0.00</span></p>
-        <p>All prices shown include VAT. Email Chris on <a href="mailto:enquiries@eryripress.co.uk">enquiries@eryripress.co.uk</a> and we will be very happy to help.</p>
-    </form>
-<div>
+            <div class="checkbox-label">
+                <input checked type="checkbox" id="insert" name="insert">
+                <label for="insert">Include double sided A4 full colour insert? (4p)</label>
+            </div>
+            
+            <div class="checkbox-label">
+                <input checked type="checkbox" id="freepost" name="freepost">
+                <label for="freepost">Include preprinted return envelope? (3p)</label>
+            </div>
+            
+            <p>Your quote: <span id="total">£0.00</span></p>
+            <p>All prices shown include VAT. Email Chris on <a href="mailto:enquiries@eryripress.co.uk">enquiries@eryripress.co.uk</a> and we will be very happy to help.</p>
+        </form>
+    </div>
+
     <div class="footer">
-        <img style="height: 100px; width: 100px;" src="./logo.jpg">
+        <img src="./logo.jpg" alt="Eryri Press Logo">
         <p>&copy; 2024 Eryri Press</p>
-</div>
+    </div>
 </body>
 </html>
