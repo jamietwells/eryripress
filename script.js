@@ -4,32 +4,34 @@ document.addEventListener('DOMContentLoaded', function() {
         input.addEventListener('input', handleInputChange);
     });
 
+    const elements = {
+        amount: document.getElementById('amount'),
+        postageOnly: document.getElementById('postage-only'),
+        singleSided: document.getElementById('single-sided-full-colour'),
+        doubleSided: document.getElementById('double-sided-full-colour'),
+        insert: document.getElementById('insert'),
+        freepost: document.getElementById('freepost')
+    };
+
     function handleInputChange() {
-        const amount = parseInt(document.getElementById('amount').value) || 0;
-        const volunteerAmount = parseInt(document.getElementById('volunteer-amount').value) || 0;
-        const postageOnlyChecked = document.getElementById('postage-only').checked;
-        const eryriAmount = amount - volunteerAmount;
+        const postageOnlyChecked = elements.postageOnly.checked;
 
-        for(const input of [ 'single-sided-full-colour', 'double-sided-full-colour', 'insert', 'freepost']) {
-            document.getElementById(input).disabled = postageOnlyChecked;
+        for(const input of [ elements.singleSided, elements.doubleSided, elements.insert, elements.freepost]) {
+            input.disabled = postageOnlyChecked;
         }
-
-        document.getElementById('eryri-amount').value = eryriAmount;
 
         calculateTotal();
     }
 
     function calculateTotal() {
-        const amount = parseInt(document.getElementById('amount').value) || 0;
-        const postageOnlyChecked = document.getElementById('postage-only').checked;
-        const singleSidedChecked = document.getElementById('single-sided-full-colour').checked;
-        const doubleSidedChecked = document.getElementById('double-sided-full-colour').checked;
-        const insertChecked = document.getElementById('insert').checked;
-        const freepostChecked = document.getElementById('freepost').checked;
-        const volunteerAmount = parseInt(document.getElementById('volunteer-amount').value) || 0;
-        const eryriAmount = amount - volunteerAmount;
+        const amount = parseInt(elements.amount.value) || 0;
+        const postageOnlyChecked = elements.postageOnly.checked;
+        const singleSidedChecked = elements.singleSided.checked;
+        const doubleSidedChecked = elements.doubleSided.checked;
+        const insertChecked = elements.insert.checked;
+        const freepostChecked = elements.freepost.checked;
 
-        let total = 0;
+        let total = amount * 0.64;
 
         if (!postageOnlyChecked) {
             if (singleSidedChecked) {
@@ -48,12 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        total += eryriAmount * 0.64;
-
-        if (volunteerAmount > 0) {
-            total += 39.99;
-        }
-
-        document.getElementById('total').innerText = `£${total.toFixed(2)}`;
+        document.getElementById('total').innerText = total.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' });
     }
 });
