@@ -175,7 +175,7 @@ iframe[src="https://docs.google.com/forms/d/e/1FAIpQLSeZJtV0hbUWJArmVICuaYPeAUgL
 }
 
 .drop-cap {
-    color: navy; /* Navy blue color */
+    color: #007bff; /* Navy blue color */
     font-size: 2em; /* Larger font size for drop cap */
     float: left; /* Floats the letter to the left */
     margin-right: 5px; /* Adds some space to the right of the drop cap */
@@ -189,5 +189,5 @@ iframe[src="https://docs.google.com/forms/d/e/1FAIpQLSeZJtV0hbUWJArmVICuaYPeAUgL
 }
 
 .faq dl dd {
-    padding-left: 20px; /* Indent answers slightly for better readability */
+    padding-left: 10px; /* Indent answers slightly for better readability */
 }
