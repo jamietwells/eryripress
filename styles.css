@@ -175,7 +175,7 @@ iframe[src="https://docs.google.com/forms/d/e/1FAIpQLSeZJtV0hbUWJArmVICuaYPeAUgL
 }
 
 .drop-cap {
-    color: #007bff; /* Navy blue color */
+    color: #004080; /* Navy blue */
     font-size: 2em; /* Larger font size for drop cap */
     float: left; /* Floats the letter to the left */
     margin-right: 5px; /* Adds some space to the right of the drop cap */
