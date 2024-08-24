@@ -173,3 +173,21 @@ iframe[src="https://docs.google.com/forms/d/e/1FAIpQLSeZJtV0hbUWJArmVICuaYPeAUgL
     width: 100%;
     height: 1155px;
 }
+
+.drop-cap {
+    color: navy; /* Navy blue color */
+    font-size: 2em; /* Larger font size for drop cap */
+    float: left; /* Floats the letter to the left */
+    margin-right: 5px; /* Adds some space to the right of the drop cap */
+    line-height: 1; /* Ensures the drop cap is vertically aligned */
+}
+
+/* Add space between Q&A pairs */
+.faq dl dt,
+.faq dl dd {
+    margin-bottom: 20px; /* Adds space below each Q&A */
+}
+
+.faq dl dd {
+    padding-left: 20px; /* Indent answers slightly for better readability */
+}
