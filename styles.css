@@ -191,3 +191,9 @@ iframe[src="https://docs.google.com/forms/d/e/1FAIpQLSeZJtV0hbUWJArmVICuaYPeAUgL
 .faq dl dd {
     padding-left: 10px; /* Indent answers slightly for better readability */
 }
+
+
+.faq dl dt p,
+.faq dl dd p {
+    font-size: 1em;
+}
