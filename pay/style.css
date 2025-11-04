@@ -132,3 +132,11 @@ body {
   font-weight: 700;
   color: #0b0c0c;
 }
+/* Grey caption-style text under total box */
+.reduced-text {
+  color: #505a5f; /* GOV.UK grey */
+  font-size: 1rem;
+  margin-top: -0.5rem;
+  margin-left: 1.25rem; /* slight indent to align visually with box content */
+  margin-bottom: 2rem;
+}
