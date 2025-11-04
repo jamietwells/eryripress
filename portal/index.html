@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>GMCA – PCN Pay Home</title>
+  <title>GMCA – Pay PCN Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- GOV.UK Frontend CSS (includes GDS Transport font) -->
@@ -28,14 +28,19 @@
       <p class="page-subtitle">Enter Penalty Charge Notice (PCN) number and vehicle registration</p>
 
       <form id="pcn-form" novalidate>
-        <!-- Error message box -->
-        <div id="error-message" class="error-box" style="display:none;"></div>
+        <!-- GOV.UK style error summary -->
+        <div id="error-summary" class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary" style="display:none;">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+          <div class="govuk-error-summary__body">
+            <ul id="error-list" class="govuk-list govuk-error-summary__list"></ul>
+          </div>
+        </div>
 
         <!-- PCN number -->
         <div class="form-group">
           <label for="PCN" class="form-label">PCN number</label>
           <div class="form-hint">Your PCN number starting with AW followed by 8 digits</div>
-          <input class="form-input" id="PCN" name="PCN" type="text" maxlength="10" autocomplete="off">
+          <input class="form-input" id="PCN" name="PCN" type="text" maxlength="10" autocomplete="off" value="AW">
         </div>
 
         <!-- Registration number -->
@@ -64,7 +69,8 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const form = document.getElementById("pcn-form");
-      const errorBox = document.getElementById("error-message");
+      const errorSummary = document.getElementById("error-summary");
+      const errorList = document.getElementById("error-list");
 
       form.addEventListener("submit", function(e) {
         e.preventDefault();
@@ -72,14 +78,18 @@
         const pcn = document.getElementById("PCN").value.trim().toUpperCase();
         const vrm = document.getElementById("VRM").value.trim().toUpperCase();
 
-        // Validation checks
+        let errors = [];
+
         if (pcn.length !== 10) {
-          showError("Your PCN number must be exactly 10 characters long.");
-          return;
+          errors.push("Your PCN number must be exactly 10 characters long.");
         }
 
         if (!vrm) {
-          showError("Please enter your vehicle registration number.");
+          errors.push("Please enter your vehicle registration number.");
+        }
+
+        if (errors.length > 0) {
+          showErrors(errors);
           return;
         }
 
@@ -88,9 +98,18 @@
         window.location.href = payUrl;
       });
 
-      function showError(message) {
-        errorBox.style.display = "block";
-        errorBox.textContent = message;
+      function showErrors(errors) {
+        // Clear old errors
+        errorList.innerHTML = "";
+
+        errors.forEach(msg => {
+          const li = document.createElement("li");
+          li.textContent = msg;
+          errorList.appendChild(li);
+        });
+
+        errorSummary.style.display = "block";
+        errorSummary.focus();
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
     });
