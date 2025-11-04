@@ -1,19 +1,117 @@
-/* Confirmation checkbox box */
-.confirmation-box {
-  margin-bottom: 1.5rem;
-  font-size: 1.125rem;
+/* General */
+body {
+  background-color: #ffffff;
+  font-family: "GDS Transport", Arial, sans-serif;
+  margin: 0;
   color: #0b0c0c;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
-.confirmation-box input[type="checkbox"] {
-  width: 1.25rem;
-  height: 1.25rem;
-  cursor: pointer;
+/* GMCA header bar */
+.gmca-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 0.75rem 0;
 }
 
-.confirmation-box label {
+.gmca-header__container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.gmca-logo {
+  height: 40px;
+  width: auto;
+}
+
+/* Content container */
+.govuk-width-container {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+/* Page layout */
+.lookup-card {
+  padding: 2rem 0;
+}
+
+/* Headings */
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0b0c0c;
+  margin-bottom: 1rem;
+}
+
+/* Inset box for PCN details */
+.govuk-inset-text {
+  border-left: 5px solid #b1b4b6;
+  background-color: #f3f2f1;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* Payment total box */
+.total-box {
+  border: 2px solid #0b0c0c;
+  background-color: #ffffff;
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.total-box p {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+/* Green Proceed to payment button */
+.search-button {
+  background-color: #00703c; /* GOV.UK green */
+  border: none;
+  border-bottom: 3px solid #0b0c0c; /* black underline */
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.45rem 1.25rem;
   cursor: pointer;
+  width: auto;
+  text-align: center;
+}
+
+.search-button:hover {
+  background-color: #005a30;
+}
+
+/* Bottom text */
+.bottom-text {
+  margin-top: 6rem;
+  font-size: 1rem;
+  color: #0b0c0c;
+  text-align: left;
+}
+
+.bottom-text a {
+  color: #1d70b8;
+  text-decoration: underline;
+}
+
+.bottom-text a:hover {
+  text-decoration: none;
+}
+
+/* Responsive layout */
+@media (max-width: 640px) {
+  .govuk-width-container {
+    margin: 2rem 1rem;
+  }
+
+  .page-title {
+    font-size: 1.75rem;
+  }
+
+  .search-button {
+    width: 100%;
+  }
 }
