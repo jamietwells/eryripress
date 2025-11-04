@@ -5,7 +5,7 @@
   <title>Pay your PCN – GMCA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- GOV.UK Frontend CSS (includes GDS Transport font) -->
+  <!-- GOV.UK Frontend CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/govuk-frontend@4.13.0/dist/govuk-frontend-4.13.0.min.css">
 
   <!-- Custom styles -->
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <!-- GMCA header bar -->
+  <!-- Header -->
   <header class="gmca-header">
     <div class="gmca-header__container">
       <img src="icon.svg" alt="GMCA logo" class="gmca-logo">
@@ -25,13 +25,16 @@
 
       <h1 class="page-title">Pay your Penalty Charge Notice</h1>
 
-      <!-- Display the PCN and VRM details -->
-      <div class="govuk-inset-text" id="pcn-info">
-        Loading details...
+      <!-- PCN details boxes -->
+      <div class="info-box">
+        <p><strong>PCN Number:</strong> <span id="pcn-value">Loading...</span></p>
       </div>
 
-      <!-- Payment summary -->
-      <div class="total-box">
+      <div class="info-box">
+        <p><strong>Vehicle Registration:</strong> <span id="vrm-value">Loading...</span></p>
+      </div>
+
+      <div class="info-box">
         <p><strong>Total:</strong> £25.00 (50% discount if paid within 14 days)</p>
       </div>
 
@@ -40,6 +43,7 @@
       <div class="bottom-text">
         <p><a href="/portal" class="govuk-link">Go back</a></p>
       </div>
+
     </div>
   </main>
 
@@ -49,17 +53,20 @@
       const pcn = params.get("pcn");
       const vrm = params.get("vrm");
 
-      const infoBox = document.getElementById("pcn-info");
+      const pcnValue = document.getElementById("pcn-value");
+      const vrmValue = document.getElementById("vrm-value");
       const payBtn = document.getElementById("pay-button");
 
       if (pcn && vrm) {
-        infoBox.textContent = `PCN Number: ${pcn} | Vehicle Registration: ${vrm}`;
+        pcnValue.textContent = pcn;
+        vrmValue.textContent = vrm;
       } else {
-        infoBox.innerHTML = "<strong>Missing information.</strong> Please return to the <a href='../index.html'>lookup page</a>.";
+        pcnValue.textContent = "Missing";
+        vrmValue.textContent = "Missing";
         payBtn.disabled = true;
       }
 
-      // Payment redirect (replace with your real Stripe link later)
+      // Redirect to Stripe (update link later)
       payBtn.addEventListener("click", function () {
         const stripeUrl = "https://checkout.stripe.com/pay/your_stripe_payment_link_here";
         window.location.href = stripeUrl + `?pcn=${encodeURIComponent(pcn)}&vrm=${encodeURIComponent(vrm)}`;
