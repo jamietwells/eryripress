@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Pay your PCN – GMCA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- GOV.UK Frontend CSS (includes GDS Transport font) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/govuk-frontend@4.13.0/dist/govuk-frontend-4.13.0.min.css">
+
+  <!-- Stripe JS (we’ll use this later when you connect to Stripe) -->
+  <script src="https://js.stripe.com/v3/"></script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- GMCA header bar -->
+  <header class="gmca-header">
+    <div class="gmca-header__container">
+      <img src="icon.svg" alt="GMCA logo" class="gmca-logo">
+    </div>
+  </header>
+
+  <main class="govuk-width-container" id="main-content">
+    <div class="lookup-card">
+
+      <h1 class="page-title">Pay your Penalty Charge Notice</h1>
+
+      <!-- Display the PCN and VRM details -->
+      <div class="govuk-inset-text" id="pcn-info">
+        Loading details...
+      </div>
+
+      <!-- Payment form -->
+      <div id="payment-section">
+        <p class="page-subtitle">Please confirm your PCN details above, then proceed to payment.</p>
+
+        <!-- Stripe Elements will go here -->
+        <div id="card-element" class="stripe-input"></div>
+
+        <button id="pay-button" class="search-button" disabled>Pay now</button>
+        <div id="payment-message" class="form-hint"></div>
+      </div>
+
+      <div class="bottom-text">
+        <p>If your details are incorrect, please return to the <a href="../index.html">PCN lookup page</a>.</p>
+
+        <p>
+          <a href="https://www.greatermanchester-ca.gov.uk/who-we-are/accounts-transparency-and-governance/accessibility-statement/"
+             target="_blank">
+            Our accessibility statement
+          </a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // STEP 1: Read query parameters
+    const params = new URLSearchParams(window.location.search);
+    const pcn = params.get("pcn");
+    const vrm = params.get("vrm");
+
+    // STEP 2: Display them or show error
+    const infoBox = document.getElementById("pcn-info");
+
+    if (pcn && vrm) {
+      infoBox.textContent = `PCN Number: ${pcn} | Vehicle Registration: ${vrm}`;
+      document.getElementById("pay-button").disabled = false;
+    } else {
+      infoBox.innerHTML = "<strong>Missing information.</strong> Please return to the <a href='../index.html'>lookup page</a>.";
+    }
+
+    // STEP 3: (Future) Stripe setup placeholder
+    // When you’re ready to integrate Stripe, this is where we’ll add the code
+    // to create a PaymentIntent and handle card payments with Elements.
+  </script>
+</body>
+</html>
