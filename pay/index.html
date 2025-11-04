@@ -30,28 +30,15 @@
         Loading details...
       </div>
 
-      <!-- Confirmation tick box -->
-      <div class="confirmation-box">
-        <input type="checkbox" id="confirm-details">
-        <label for="confirm-details">I confirm the PCN details above are accurate</label>
-      </div>
-
       <!-- Payment summary -->
       <div class="total-box">
         <p><strong>Total:</strong> £25.00 (50% discount if paid within 14 days)</p>
       </div>
 
-      <button id="pay-button" class="search-button" disabled>Proceed to payment</button>
+      <button id="pay-button" class="search-button">Proceed to payment</button>
 
       <div class="bottom-text">
         <p><a href="/portal" class="govuk-link">Go back</a></p>
-
-        <p>
-          <a href="https://www.greatermanchester-ca.gov.uk/who-we-are/accounts-transparency-and-governance/accessibility-statement/"
-             target="_blank">
-            Our accessibility statement
-          </a>
-        </p>
       </div>
     </div>
   </main>
@@ -64,7 +51,6 @@
 
       const infoBox = document.getElementById("pcn-info");
       const payBtn = document.getElementById("pay-button");
-      const confirmBox = document.getElementById("confirm-details");
 
       if (pcn && vrm) {
         infoBox.textContent = `PCN Number: ${pcn} | Vehicle Registration: ${vrm}`;
@@ -72,11 +58,6 @@
         infoBox.innerHTML = "<strong>Missing information.</strong> Please return to the <a href='../index.html'>lookup page</a>.";
         payBtn.disabled = true;
       }
-
-      // Enable Pay button only when checkbox is ticked
-      confirmBox.addEventListener("change", () => {
-        payBtn.disabled = !confirmBox.checked;
-      });
 
       // Payment redirect (replace with your real Stripe link later)
       payBtn.addEventListener("click", function () {
