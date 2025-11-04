@@ -1,26 +1,43 @@
-/* Reset and basic styling */
+/* Page background */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f5f5f5;
-  color: #333;
+  background-color: #f3f2f1; /* light grey background like gov.uk */
+  font-family: "Transport", "Arial", sans-serif; /* GOV.UK typeface */
 }
 
-header, footer {
-  background: #333;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-}
-
-main {
+/* Centered lookup card */
+.lookup-card {
+  background-color: #fff;
+  max-width: 480px;
+  margin: 3rem auto; /* vertical spacing */
   padding: 2rem;
-  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
-button {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  cursor: pointer;
+/* Heading spacing inside card */
+.lookup-card h1 {
+  margin-bottom: 1.5rem;
+}
+
+/* Spacing between input fields */
+.lookup-card .govuk-form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Optional: make button full width on mobile */
+.lookup-card .govuk-button {
+  width: 100%;
+}
+
+/* Footer spacing */
+.govuk-footer {
+  margin-top: 4rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .lookup-card {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
 }
