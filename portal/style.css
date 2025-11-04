@@ -1,7 +1,7 @@
 /* General */
 body {
   background-color: #ffffff;
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: "GDS Transport", Arial, sans-serif;
   margin: 0;
   color: #0b0c0c;
 }
@@ -86,13 +86,13 @@ body {
 
 /* Smaller green Search button */
 .search-button {
-  background-color: #00703c;
+  background-color: #00703c; /* GOV.UK green */
   border: none;
-  border-bottom: 3px solid #0b0c0c;
+  border-bottom: 3px solid #0b0c0c; /* black underline */
   color: #ffffff;
   font-size: 1rem;
   font-weight: 700;
-  padding: 0.5rem 1.25rem;
+  padding: 0.45rem 1.25rem;
   cursor: pointer;
   width: auto;
   text-align: center;
