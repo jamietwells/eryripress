@@ -2,103 +2,63 @@
 <html lang="en" class="govuk-template">
 <head>
   <meta charset="utf-8">
-  <title>Greater Manchester Combined Authority</title>
+  <title>Cheshire West And Chester Council – PCN Lookup</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#1d70b8">
-
-  <!-- GOV.UK Frontend CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/govuk-frontend@4.13.0/dist/govuk-frontend-4.13.0.min.css">
-  
-  <style>
-    body {
-      background-color: #f3f2f1; /* light grey background like gov.uk */
-    }
-
-    .lookup-card {
-      background-color: #fff;
-      max-width: 480px;
-      margin: 3rem auto;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    }
-
-    .lookup-card h1 {
-      margin-bottom: 1.5rem;
-    }
-
-    .govuk-footer {
-      margin-top: 4rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="govuk-template__body">
 
   <!-- Skip link -->
-  <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">
-    Penalty Charge Notice Portal
-  </a>
+  <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
 
   <!-- Header -->
-  <header class="govuk-header" role="banner" data-module="govuk-header">
+  <header class="govuk-header" role="banner" style="background-color: #6240BA;" data-module="govuk-header">
     <div class="govuk-header__container govuk-width-container">
       <div class="govuk-header__logo">
-        <a href="/" class="govuk-header__link govuk-header__link--homepage">
-          <span class="govuk-header__logotype">Your Council</span>
+        <a class="govuk-header__link govuk-header__link--homepage" href="/">
+          <img src="cwc-logo.png" alt="Cheshire West And Chester Council" style="width:180px; height:50px;">
         </a>
       </div>
     </div>
   </header>
 
   <!-- Main content -->
-  <div class="govuk-width-container">
-    <main class="govuk-main-wrapper" id="main-content">
-      <div class="lookup-card">
-        <h1 class="govuk-heading-xl">Check your Penalty Charge Notice</h1>
+  <main class="govuk-main-wrapper" id="main-content">
+    <div class="lookup-card">
+      <h1 class="govuk-heading-xl">Penalty Charge Notice Portal</h1>
+      <p>Enter Penalty Charge Notice (PCN) number and vehicle registration</p>
 
-        <form action="/pcn-lookup" method="get" class="govuk-form-group">
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="pcn-number">PCN number</label>
-            <input class="govuk-input" id="pcn-number" name="pcnNumber" type="text" required>
+      <form action="/PCNs/" method="post" novalidate class="govuk-form-group">
+        <!-- PCN Number -->
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="PCN">PCN number</label>
+          <div id="PCN-name-hint" class="govuk-hint">
+            Your PCN number starting with AW followed by 8 digits
           </div>
+          <input class="govuk-input" id="PCN" name="PCN" type="text" aria-required="true" maxlength="50" style="text-transform: uppercase;" autocomplete="off">
+        </div>
 
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="vrm">Vehicle registration (VRM)</label>
-            <input class="govuk-input" id="vrm" name="vrm" type="text" required>
+        <!-- VRM -->
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="VRM">Registration number</label>
+          <div id="VRM-name-hint" class="govuk-hint">
+            Your vehicle registration number (number plate)
           </div>
+          <input class="govuk-input" id="VRM" name="VRM" type="text" aria-required="true" maxlength="24" style="text-transform: uppercase;" autocomplete="off">
+        </div>
 
-          <button class="govuk-button" data-module="govuk-button">Lookup your PCN</button>
-        </form>
+        <button class="govuk-button" data-module="govuk-button">Search</button>
+      </form>
+
+      <p>You can use this facility to view details, photographs or footage of your PCN.</p>
+
+      <div class="accessibility-statement">
+        <a href="https://www.cheshirewestandchester.gov.uk/accessibility" target="_blank">Our accessibility statement</a>
       </div>
-    </main>
-  </div>
+    </div>
+  </main>
 
   <!-- Footer -->
   <footer class="govuk-footer" role="contentinfo">
-    <div class="govuk-width-container">
-      <div class="govuk-footer__meta">
-        <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
-          <span class="govuk-footer__licence-description">
-            All content is available under the
-            <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">
-              Open Government Licence v3.0
-            </a>, except where otherwise stated
-          </span>
-        </div>
-        <div class="govuk-footer__meta-item">
-          <a class="govuk-footer__link govuk-footer__copyright-logo" href="#">
-            © Crown copyright
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- GOV.UK Frontend JS -->
-  <script src="https://cdn.jsdelivr.net/npm/govuk-frontend@4.13.0/dist/govuk-frontend-4.13.0.min.js"></script>
-  <script>
-    window.GOVUKFrontend.initAll();
-  </script>
-
-</body>
-</html>
+    <div class="govu
