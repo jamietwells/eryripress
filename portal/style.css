@@ -6,13 +6,32 @@ body {
   color: #0b0c0c;
 }
 
+/* GMCA header bar */
+.gmca-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 0.75rem 0;
+}
+
+.gmca-header__container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.gmca-logo {
+  height: 40px;
+  width: auto;
+}
+
+/* Content container */
 .govuk-width-container {
   max-width: 700px;
   margin: 3rem auto;
   padding: 0 1.5rem;
 }
 
-/* Card layout */
+/* Page layout */
 .lookup-card {
   padding: 2rem 0;
 }
@@ -45,7 +64,7 @@ body {
 }
 
 .form-hint {
-  color: #505a5f; /* GOV.UK grey */
+  color: #505a5f;
   font-size: 1rem;
   margin-bottom: 0.75rem;
 }
@@ -54,7 +73,7 @@ body {
 .form-input {
   display: block;
   width: 100%;
-  padding: 0.625rem;
+  padding: 0.6rem;
   font-size: 1rem;
   border: 2px solid #0b0c0c;
   border-radius: 0;
@@ -65,17 +84,17 @@ body {
   outline: 3px solid #0b0c0c;
 }
 
-/* Green button */
+/* Smaller green Search button */
 .search-button {
-  background-color: #00703c; /* GOV.UK green */
+  background-color: #00703c;
   border: none;
-  border-bottom: 4px solid #0b0c0c; /* black underline */
+  border-bottom: 3px solid #0b0c0c;
   color: #ffffff;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 700;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1.25rem;
   cursor: pointer;
-  width: 100%;
+  width: auto;
   text-align: center;
 }
 
@@ -107,5 +126,9 @@ body {
 
   .page-title {
     font-size: 1.75rem;
+  }
+
+  .search-button {
+    width: 100%;
   }
 }
