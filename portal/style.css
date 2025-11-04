@@ -1,83 +1,111 @@
-/* Base background and font */
+/* General */
 body {
-  background-color: #f3f2f1; /* GOV.UK light grey */
-  font-family: "GDS Transport", Arial, sans-serif;
+  background-color: #ffffff;
+  font-family: 'Open Sans', Arial, sans-serif;
   margin: 0;
+  color: #0b0c0c;
 }
 
-/* Lookup card container */
-.lookup-card {
-  max-width: 520px;
+.govuk-width-container {
+  max-width: 700px;
   margin: 3rem auto;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 0 1.5rem;
 }
 
-/* Header section inside the card */
-.lookup-card-header {
-  background-color: #6240BA; /* GMCA purple */
-  padding: 1.5rem;
-  color: #fff;
+/* Card layout */
+.lookup-card {
+  padding: 2rem 0;
 }
 
-.lookup-card-header h1 {
-  margin: 0;
-  font-size: 1.6rem;
-  font-weight: bold;
+/* Headings */
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0b0c0c;
+  margin-bottom: 0.75rem;
 }
 
-/* Body of the lookup card */
-.lookup-card-body {
-  padding: 2rem;
+.page-subtitle {
+  font-size: 1.125rem;
+  color: #0b0c0c;
+  margin-bottom: 2rem;
 }
 
-.lookup-card-body p {
-  margin-bottom: 1.5rem;
+/* Form groups */
+.form-group {
+  margin-bottom: 2rem;
 }
 
-/* Input styling (inherits GOV.UK frontend styles) */
-.govuk-input {
-  text-transform: uppercase;
+.form-label {
+  display: block;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  color: #0b0c0c;
 }
 
-/* Button full width on small screens */
-.govuk-button {
+.form-hint {
+  color: #505a5f; /* GOV.UK grey */
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Input boxes */
+.form-input {
+  display: block;
   width: 100%;
-  background-color: #6240BA; /* match GMCA purple */
+  padding: 0.625rem;
+  font-size: 1rem;
+  border: 2px solid #0b0c0c;
+  border-radius: 0;
+  box-sizing: border-box;
 }
 
-.govuk-button:hover {
-  background-color: #51349b;
+.form-input:focus {
+  outline: 3px solid #0b0c0c;
 }
 
-/* Hint and labels */
-.govuk-hint {
-  margin-bottom: 0.5rem;
+/* Green button */
+.search-button {
+  background-color: #00703c; /* GOV.UK green */
+  border: none;
+  border-bottom: 4px solid #0b0c0c; /* black underline */
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
 }
 
-/* Accessibility statement */
-.accessibility-statement {
-  margin-top: 2rem;
+.search-button:hover {
+  background-color: #005a30;
 }
 
-.accessibility-statement a {
+/* Bottom text */
+.bottom-text {
+  margin-top: 6rem;
+  font-size: 1rem;
+  color: #0b0c0c;
+}
+
+.bottom-text a {
   color: #1d70b8;
   text-decoration: underline;
 }
 
-/* Small screen responsiveness */
+.bottom-text a:hover {
+  text-decoration: none;
+}
+
+/* Responsive */
 @media (max-width: 640px) {
-  .lookup-card {
-    margin: 1.5rem;
+  .govuk-width-container {
+    margin: 2rem 1rem;
   }
 
-  .lookup-card-body {
-    padding: 1.5rem;
-  }
-
-  .lookup-card-header {
-    padding: 1rem;
+  .page-title {
+    font-size: 1.75rem;
   }
 }
