@@ -1,0 +1,105 @@
+/* General */
+body {
+  background-color: #ffffff;
+  font-family: "GDS Transport", Arial, sans-serif;
+  margin: 0;
+  color: #0b0c0c;
+}
+
+/* GMCA header bar */
+.gmca-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 0.75rem 0;
+}
+
+.gmca-header__container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.gmca-logo {
+  height: 40px;
+  width: auto;
+}
+
+/* Content container */
+.govuk-width-container {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+/* Page layout */
+.lookup-card {
+  padding: 2rem 0;
+}
+
+/* Headings */
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0b0c0c;
+  margin-bottom: 1rem;
+}
+
+.page-subtitle {
+  font-size: 1.125rem;
+  color: #0b0c0c;
+  margin-bottom: 2rem;
+}
+
+/* Inset box for PCN details */
+.govuk-inset-text {
+  border-left: 5px solid #b1b4b6;
+  background-color: #f3f2f1;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* Stripe form placeholder */
+.stripe-input {
+  padding: 1rem;
+  border: 2px solid #0b0c0c;
+  background-color: #ffffff;
+  margin-bottom: 1.5rem;
+  min-height: 60px;
+}
+
+/* Smaller green Pay button (same as Search) */
+.search-button {
+  background-color: #00703c; /* GOV.UK green */
+  border: none;
+  border-bottom: 3px solid #0b0c0c; /* black underline */
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.45rem 1.25rem;
+  cursor: pointer;
+  width: auto;
+  text-align: center;
+}
+
+.search-button:hover {
+  background-color: #005a30;
+}
+
+/* Payment message */
+#payment-message {
+  margin-top: 1rem;
+  color: #0b0c0c;
+  font-size: 1rem;
+}
+
+/* Bottom text */
+.bottom-text {
+  margin-top: 6rem;
+  font-size: 1rem;
+  color: #0b0c0c;
+}
+
+.bottom-text a {
+  color: #1d70b8;
+  text-decoration:
