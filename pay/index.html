@@ -30,16 +30,60 @@
         Loading details...
       </div>
 
-      <!-- Payment summary -->
-      <p class="page-subtitle">Please confirm your PCN details above</p>
-
-      <div class="total-box">
-        <p><strong>Total:</strong> £25.00 (50% discount if paid within two weeks)</p>
+      <!-- Confirmation tick box -->
+      <div class="confirmation-box">
+        <input type="checkbox" id="confirm-details">
+        <label for="confirm-details">I confirm the PCN details above are accurate</label>
       </div>
 
-      <button id="pay-button" class="search-button">Proceed to payment</button>
+      <!-- Payment summary -->
+      <div class="total-box">
+        <p><strong>Total:</strong> £25.00 (50% discount if paid within 14 days)</p>
+      </div>
+
+      <button id="pay-button" class="search-button" disabled>Proceed to payment</button>
 
       <div class="bottom-text">
-        <p>If your details are incorrect, please return to the <a href="../index.html">PCN lookup page</a>.</p>
+        <p><a href="/portal" class="govuk-link">Go back</a></p>
 
         <p>
+          <a href="https://www.greatermanchester-ca.gov.uk/who-we-are/accounts-transparency-and-governance/accessibility-statement/"
+             target="_blank">
+            Our accessibility statement
+          </a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const params = new URLSearchParams(window.location.search);
+      const pcn = params.get("pcn");
+      const vrm = params.get("vrm");
+
+      const infoBox = document.getElementById("pcn-info");
+      const payBtn = document.getElementById("pay-button");
+      const confirmBox = document.getElementById("confirm-details");
+
+      if (pcn && vrm) {
+        infoBox.textContent = `PCN Number: ${pcn} | Vehicle Registration: ${vrm}`;
+      } else {
+        infoBox.innerHTML = "<strong>Missing information.</strong> Please return to the <a href='../index.html'>lookup page</a>.";
+        payBtn.disabled = true;
+      }
+
+      // Enable Pay button only when checkbox is ticked
+      confirmBox.addEventListener("change", () => {
+        payBtn.disabled = !confirmBox.checked;
+      });
+
+      // Payment redirect (replace with your real Stripe link later)
+      payBtn.addEventListener("click", function () {
+        const stripeUrl = "https://checkout.stripe.com/pay/your_stripe_payment_link_here";
+        window.location.href = stripeUrl + `?pcn=${encodeURIComponent(pcn)}&vrm=${encodeURIComponent(vrm)}`;
+      });
+    });
+  </script>
+</body>
+</html>
