@@ -44,4 +44,61 @@
     <div class="govuk-header__container govuk-width-container">
       <div class="govuk-header__logo">
         <a href="/" class="govuk-header__link govuk-header__link--homepage">
-          <span class="govu
+          <span class="govuk-header__logotype">Your Council</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper" id="main-content">
+      <div class="lookup-card">
+        <h1 class="govuk-heading-xl">Check your Penalty Charge Notice</h1>
+
+        <form action="/pcn-lookup" method="get" class="govuk-form-group">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="pcn-number">PCN number</label>
+            <input class="govuk-input" id="pcn-number" name="pcnNumber" type="text" required>
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="vrm">Vehicle registration (VRM)</label>
+            <input class="govuk-input" id="vrm" name="vrm" type="text" required>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">Lookup your PCN</button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="govuk-footer" role="contentinfo">
+    <div class="govuk-width-container">
+      <div class="govuk-footer__meta">
+        <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <span class="govuk-footer__licence-description">
+            All content is available under the
+            <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">
+              Open Government Licence v3.0
+            </a>, except where otherwise stated
+          </span>
+        </div>
+        <div class="govuk-footer__meta-item">
+          <a class="govuk-footer__link govuk-footer__copyright-logo" href="#">
+            © Crown copyright
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GOV.UK Frontend JS -->
+  <script src="https://cdn.jsdelivr.net/npm/govuk-frontend@4.13.0/dist/govuk-frontend-4.13.0.min.js"></script>
+  <script>
+    window.GOVUKFrontend.initAll();
+  </script>
+
+</body>
+</html>
