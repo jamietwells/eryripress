@@ -25,7 +25,7 @@
     <div class="lookup-card">
 
       <h1 class="page-title">Penalty Charge Notice Portal</h1>
-      <p class="page-subtitle">Enter Penalty Charge Notice (PCN) number and vehicle registration</p>
+      <p class="page-subtitle">Enter your Penalty Charge Notice (PCN) number and vehicle registration.</p>
 
       <form id="pcn-form" novalidate>
         <!-- GOV.UK style error summary -->
@@ -39,26 +39,25 @@
         <!-- PCN number -->
         <div class="form-group">
           <label for="PCN" class="form-label">PCN number</label>
-          <div class="form-hint">Your PCN number starting with AW followed by 8 digits</div>
+          <div class="form-hint">Your PCN number starts with AW followed by 8 digits (example: AW12345678).</div>
           <input class="form-input" id="PCN" name="PCN" type="text" maxlength="10" autocomplete="off" value="AW">
         </div>
 
         <!-- Registration number -->
         <div class="form-group">
-          <label for="VRM" class="form-label">Registration number</label>
-          <div class="form-hint">Your vehicle registration number (number plate)</div>
-          <input class="form-input" id="VRM" name="VRM" type="text" maxlength="24" autocomplete="off">
+          <label for="VRM" class="form-label">Vehicle registration number</label>
+          <div class="form-hint">Enter your vehicle’s registration number (number plate).</div>
+          <input class="form-input" id="VRM" name="VRM" type="text" maxlength="24" autocomplete="off" required>
         </div>
 
         <button type="submit" class="search-button">Search</button>
       </form>
 
       <div class="bottom-text">
-        <p>2025</p>
-
+        <p>© GMCA 2025</p>
         <p>
           <a href="https://www.greatermanchester-ca.gov.uk/who-we-are/accounts-transparency-and-governance/accessibility-statement/"
-             target="_blank">
+             target="_blank" rel="noopener noreferrer">
             Our accessibility statement
           </a>
         </p>
@@ -80,12 +79,14 @@
 
         let errors = [];
 
-        if (pcn.length !== 10) {
-          errors.push("Your PCN number must be exactly 10 characters long.");
+        // PCN validation
+        if (pcn.length !== 10 || !pcn.startsWith("AW") || !/^[A-Z0-9]+$/.test(pcn)) {
+          errors.push("Your PCN number must start with AW and be exactly 10 characters long.");
         }
 
+        // VRM validation (required)
         if (!vrm) {
-          errors.push("Please enter your vehicle registration number.");
+          errors.push("You must enter your vehicle registration number.");
         }
 
         if (errors.length > 0) {
@@ -93,13 +94,13 @@
           return;
         }
 
-        // If validation passes, redirect to payment page
+        // If validation passes, redirect to payment page (relative path for masking)
         const payUrl = `/pay?pcn=${encodeURIComponent(pcn)}&vrm=${encodeURIComponent(vrm)}`;
         window.location.href = payUrl;
       });
 
       function showErrors(errors) {
-        // Clear old errors
+        // Clear previous errors
         errorList.innerHTML = "";
 
         errors.forEach(msg => {
