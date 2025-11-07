@@ -94,7 +94,7 @@
         }
 
         // If validation passes, redirect to payment page
-        const payUrl = `https://www.eryripress.co.uk/pay?pcn=${encodeURIComponent(pcn)}&vrm=${encodeURIComponent(vrm)}`;
+        const payUrl = `/pay?pcn=${encodeURIComponent(pcn)}&vrm=${encodeURIComponent(vrm)}`;
         window.location.href = payUrl;
       });
 
