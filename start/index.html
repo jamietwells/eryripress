@@ -2,84 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>GMCA – Pay or Appeal a Parking or Bus Lane Fine</title>
+  <title>GMCA – Pay or Appeal a Parking Fine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- GOV.UK Frontend CSS (includes GDS Transport font) -->
+  <!-- GOV.UK Frontend CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/govuk-frontend@4.13.0/dist/govuk-frontend-4.13.0.min.css">
-
-  <!-- Custom GMCA styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- Header -->
+  <!-- Top bar -->
   <header class="gmca-header">
     <div class="gmca-header__container">
-      <a href="https://www.greatermanchester-ca.gov.uk/" target="_blank" rel="noopener">
-        <img src="GMCA ICON.svg" alt="GMCA logo" class="gmca-logo">
-      </a>
-      <h1 class="gmca-title">Greater Manchester Combined Authority</h1>
+      <div class="gmca-header__left">
+        <a href="https://www.greatermanchester-ca.gov.uk/" target="_blank">
+          <img src="GMCA_ICON.svg" alt="GMCA logo" class="gmca-logo">
+        </a>
+        <h1>Greater Manchester Combined Authority</h1>
+      </div>
+      <div class="gmca-header__right">
+        <a href="#" class="gmca-icon-link">Accessibility</a>
+        <a href="#" class="gmca-icon-link">MyAccount</a>
+      </div>
     </div>
   </header>
 
-  <!-- Hero section -->
-  <section class="gmca-hero">
-    <div class="govuk-width-container">
-      <h1 class="govuk-heading-l">Pay or appeal a parking or bus lane fine</h1>
-      <p class="govuk-body-l">
-        Use this service to pay or appeal a Penalty Charge Notice (PCN) issued within Greater Manchester.
-      </p>
+  <!-- Search bar -->
+  <div class="gmca-search-bar">
+    <div class="gmca-search-container">
+      <input type="text" placeholder="Search Greater Manchester Combined Authority...">
+      <button>Search</button>
+    </div>
+  </div>
+
+  <!-- Breadcrumb -->
+  <nav class="gmca-breadcrumb">
+    <a href="#">Home</a> ›
+    <a href="#">Transport and roads</a> ›
+    <a href="#">Parking and permits</a> ›
+    <span>Pay or appeal a parking fine</span>
+  </nav>
+
+  <!-- Main content -->
+  <main class="gmca-main">
+    <h2>Civil parking enforcement</h2>
+
+    <section class="gmca-section-card">
+      <h3>In this section</h3>
+      <ol>
+        <li><span class="circle">1</span> Overview</li>
+        <li><span class="circle active">2</span> Pay or appeal a parking or bus lane fine</li>
+        <li><span class="circle">3</span> Appeal a parking, bus lane or moving traffic penalty</li>
+      </ol>
+    </section>
+
+    <section class="gmca-content">
+      <h3>Pay or appeal a parking or bus lane fine</h3>
+      <p>You can use this service to pay or appeal a Penalty Charge Notice (PCN) issued within Greater Manchester.</p>
+
       <div class="gmca-buttons">
-        <a href="/portal" class="gmca-button gmca-button--teal">Pay a new fine</a>
-        <a href="/appeal" class="gmca-button gmca-button--purple">Appeal</a>
+        <a href="/portal" class="gmca-button teal">Pay a new fine</a>
+        <a href="/appeal" class="gmca-button purple">Appeal</a>
       </div>
-    </div>
-  </section>
-
-  <!-- Info section -->
-  <main class="govuk-width-container">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">Before you start</h2>
-        <p class="govuk-body">
-          You’ll need your Penalty Charge Notice (PCN) number and your vehicle registration number.
-        </p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Your PCN starts with <strong>AW</strong> followed by 8 digits (for example: <strong>AW12345678</strong>).</li>
-          <li>Your vehicle registration (for example: <strong>RF24 JVU</strong>).</li>
-        </ul>
-
-        <div class="govuk-inset-text">
-          You should wait at least one full working day after your notice was issued before paying online.
-        </div>
-
-        <p class="govuk-body">
-          If you believe your PCN was issued in error, you can make an appeal using this service.
-        </p>
-      </div>
-    </div>
+    </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="govuk-footer">
-    <div class="govuk-width-container">
-      <div class="govuk-footer__meta">
-        <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
-          <span class="govuk-footer__licence-description">
-            All content is available under the
-            <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
-               rel="license">Open Government Licence v3.0</a>, except where otherwise stated.
-          </span>
-        </div>
-        <div class="govuk-footer__meta-item">
-          <a class="govuk-footer__link govuk-footer__copyright-logo" href="#">© Crown copyright</a>
-        </div>
-      </div>
-    </div>
+  <footer class="gmca-footer">
+    <p>© Greater Manchester Combined Authority 2025</p>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/govuk-frontend@4.13.0/dist/govuk-frontend-4.13.0.min.js"></script>
-  <script>window.GOVUKFrontend.initAll();</script>
 </body>
 </html>
