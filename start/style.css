@@ -1,3 +1,6 @@
+/* Import base GMCA styling */
+@import url("style.css");
+
 /* Intro section alignment */
 .gmca-intro {
   max-width: 700px;
