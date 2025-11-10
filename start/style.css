@@ -1,0 +1,113 @@
+/* General layout */
+body {
+  background-color: #ffffff;
+  font-family: "GDS Transport", Arial, sans-serif;
+  color: #0b0c0c;
+  margin: 0;
+}
+
+/* GMCA header */
+.gmca-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #b1b4b6;
+  padding: 1rem 0;
+}
+
+.gmca-header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.gmca-logo {
+  height: 48px;
+  width: auto;
+}
+
+.gmca-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-left: 0.75rem;
+  color: #0b0c0c;
+}
+
+/* Search bar below header */
+.gmca-search {
+  max-width: 960px;
+  margin: 0.75rem auto;
+  padding: 0 1.5rem;
+}
+
+.gmca-search .govuk-input {
+  width: 100%;
+  max-width: 600px;
+  border: 2px solid #0b0c0c;
+}
+
+/* Breadcrumb spacing */
+.govuk-breadcrumbs {
+  margin: 1rem 0 2rem;
+}
+
+/* Sidebar */
+.govuk-related-items {
+  border-top: 2px solid #1d70b8;
+  padding-top: 1rem;
+}
+
+.govuk-related-items ul {
+  margin-top: 0.5rem;
+}
+
+.govuk-link--active {
+  font-weight: 700;
+  color: #0b0c0c;
+}
+
+/* Buttons */
+.govuk-button--start {
+  background-color: #00703c; /* GOV.UK green */
+  border-bottom: 3px solid #0b0c0c;
+  font-weight: 700;
+}
+
+.govuk-button--start:hover {
+  background-color: #005a30;
+}
+
+/* Inset text */
+.govuk-inset-text {
+  border-left: 5px solid #b1b4b6;
+  background-color: #f3f2f1;
+  padding: 1rem;
+  margin: 2rem 0;
+}
+
+/* Footer */
+.govuk-footer {
+  margin-top: 4rem;
+}
+
+/* Responsive layout */
+@media (max-width: 640px) {
+  .gmca-header__container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gmca-title {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .gmca-search {
+    padding: 0 1rem;
+  }
+
+  .govuk-button--start {
+    width: 100%;
+  }
+}
