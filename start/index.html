@@ -1,37 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pay a Parking or Bus Lane Fine – Greater Manchester Combined Authority</title>
+  <meta charset="utf-8">
+  <title>GMCA – Pay a Parking or Bus Lane Fine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- GOV.UK Frontend (for typography and layout) -->
+  <!-- GOV.UK Frontend CSS (includes GDS Transport font) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/govuk-frontend@4.13.0/dist/govuk-frontend-4.13.0.min.css">
 
-  <!-- Custom GMCA styles -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="govuk-template__body">
-  <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
-
-  <!-- Header -->
-  <header class="govuk-header" style="background-color: #ffffff; border-bottom: 1px solid #b1b4b6;">
-    <div class="govuk-width-container govuk-header__container">
-      <div class="gmca-header-logo">
-        <img src="https://www.greatermanchester-ca.gov.uk/favicon.ico" alt="GMCA Logo" class="gmca-logo">
-        <span class="govuk-header__product-name">Greater Manchester Combined Authority</span>
-      </div>
-      <nav class="gmca-header-links">
-        <a href="#" class="govuk-link">Accessibility</a>
-        <a href="#" class="govuk-link">MyAccount</a>
-      </nav>
+<body>
+  <!-- GMCA Header -->
+  <header class="gmca-header">
+    <div class="gmca-header__container">
+      <a href="https://www.greatermanchester-ca.gov.uk/" target="_blank" rel="noopener">
+        <img src="icon.svg" alt="GMCA logo" class="gmca-logo">
+      </a>
+      <h1 class="gmca-title">Greater Manchester Combined Authority</h1>
     </div>
-
-    <div class="govuk-width-container">
-      <div class="gmca-search">
-        <input type="text" class="govuk-input" placeholder="Search Greater Manchester Combined Authority...">
-      </div>
+    <div class="gmca-search">
+      <input type="text" class="govuk-input" placeholder="Search Greater Manchester Combined Authority...">
     </div>
   </header>
 
@@ -40,4 +31,87 @@
     <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
       <ol class="govuk-breadcrumbs__list">
         <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Home</a></li>
-        <
+        <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Transport and roads</a></li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Pay a parking or bus lane fine</li>
+      </ol>
+    </nav>
+  </div>
+
+  <!-- Main content -->
+  <main class="govuk-width-container" id="main-content">
+    <div class="govuk-grid-row">
+
+      <!-- Sidebar -->
+      <div class="govuk-grid-column-one-third">
+        <aside class="govuk-related-items">
+          <h2 class="govuk-heading-s">In this section</h2>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="#" class="govuk-link">Overview</a></li>
+            <li><a href="#" class="govuk-link govuk-link--active">Pay a parking or bus lane fine</a></li>
+            <li><a href="#" class="govuk-link">Appeal a parking, bus lane or moving traffic penalty</a></li>
+          </ul>
+        </aside>
+      </div>
+
+      <!-- Main column -->
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Pay a parking or bus lane fine</h1>
+
+        <p class="govuk-body">
+          You can use this online service to pay a penalty charge for parking, bus lane, or moving traffic contraventions
+          within Greater Manchester.
+        </p>
+
+        <p class="govuk-body">
+          Please allow at least one full working day after the notice was issued before attempting to pay online.
+        </p>
+
+        <p class="govuk-body">
+          You will need:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Your Penalty Charge Notice (PCN) number – it begins with <strong>AW</strong> followed by 8 digits (e.g. AW12345678)</li>
+          <li>Your vehicle registration (number plate)</li>
+        </ul>
+
+        <div class="govuk-inset-text">
+          If you believe your PCN was issued in error, you can also <a href="#" class="govuk-link">appeal online</a>.
+        </div>
+
+        <a href="/portal" class="govuk-button govuk-button--start">
+          Start now
+        </a>
+
+        <h2 class="govuk-heading-m" style="margin-top: 3rem;">Other ways to pay</h2>
+        <p class="govuk-body">You can also pay by phone using an automated payment line. Details are provided on your PCN.</p>
+
+        <p class="govuk-body">If you have any issues using this service, please contact the relevant council department directly.</p>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="govuk-footer">
+    <div class="govuk-width-container">
+      <div class="govuk-footer__meta">
+        <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <span class="govuk-footer__licence-description">
+            All content is available under the
+            <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+               rel="license">Open Government Licence v3.0</a>, except where otherwise stated.
+          </span>
+        </div>
+        <div class="govuk-footer__meta-item">
+          <a class="govuk-footer__link govuk-footer__copyright-logo" href="#">© Crown copyright</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GOV.UK Frontend JS -->
+  <script src="https://cdn.jsdelivr.net/npm/govuk-frontend@4.13.0/dist/govuk-frontend-4.13.0.min.js"></script>
+  <script>window.GOVUKFrontend.initAll();</script>
+</body>
+</html>
