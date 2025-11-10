@@ -1,115 +1,85 @@
-/* General */
-body {
-  background-color: #ffffff;
-  font-family: "GDS Transport", Arial, sans-serif;
-  color: #0b0c0c;
-  margin: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>GMCA – Pay or Appeal a Parking or Bus Lane Fine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-/* Header */
-.gmca-header {
-  background-color: #4b2c92; /* GMCA purple */
-  color: white;
-  padding: 1rem 0;
-}
+  <!-- GOV.UK Frontend CSS (includes GDS Transport font) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/govuk-frontend@4.13.0/dist/govuk-frontend-4.13.0.min.css">
 
-.gmca-header__container {
-  display: flex;
-  align-items: center;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
+  <!-- Custom GMCA styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
 
-.gmca-logo {
-  height: 48px;
-  width: auto;
-  margin-right: 1rem;
-}
+<body>
+  <!-- Header -->
+  <header class="gmca-header">
+    <div class="gmca-header__container">
+      <a href="https://www.greatermanchester-ca.gov.uk/" target="_blank" rel="noopener">
+        <img src="GMCA_ICON.svg" alt="GMCA logo" class="gmca-logo">
+      </a>
+      <h1 class="gmca-title">Greater Manchester Combined Authority</h1>
+    </div>
+  </header>
 
-.gmca-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0;
-}
+  <!-- Hero section -->
+  <section class="gmca-hero">
+    <div class="govuk-width-container">
+      <h1 class="govuk-heading-l">Pay or appeal a parking or bus lane fine</h1>
+      <p class="govuk-body-l">
+        Use this service to pay or appeal a Penalty Charge Notice (PCN) issued within Greater Manchester.
+      </p>
+      <div class="gmca-buttons">
+        <a href="/portal" class="gmca-button gmca-button--teal">Pay a new fine</a>
+        <a href="/appeal" class="gmca-button gmca-button--purple">Appeal</a>
+      </div>
+    </div>
+  </section>
 
-/* Hero section */
-.gmca-hero {
-  background-color: #e9ebf9; /* very light purple */
-  padding: 3rem 0 2rem;
-  text-align: left;
-}
+  <!-- Info section -->
+  <main class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">Before you start</h2>
+        <p class="govuk-body">
+          You’ll need your Penalty Charge Notice (PCN) number and your vehicle registration number.
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Your PCN starts with <strong>AW</strong> followed by 8 digits (for example: <strong>AW12345678</strong>).</li>
+          <li>Your vehicle registration (for example: <strong>RF24 JVU</strong>).</li>
+        </ul>
 
-.gmca-hero h1 {
-  color: #0b0c0c;
-}
+        <div class="govuk-inset-text">
+          You should wait at least one full working day after your notice was issued before paying online.
+        </div>
 
-.gmca-hero p {
-  font-size: 1.2rem;
-  color: #0b0c0c;
-  margin-bottom: 2rem;
-}
+        <p class="govuk-body">
+          If you believe your PCN was issued in error, you can make an appeal using this service.
+        </p>
+      </div>
+    </div>
+  </main>
 
-/* Dual buttons */
-.gmca-buttons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
+  <!-- Footer -->
+  <footer class="govuk-footer">
+    <div class="govuk-width-container">
+      <div class="govuk-footer__meta">
+        <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <span class="govuk-footer__licence-description">
+            All content is available under the
+            <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+               rel="license">Open Government Licence v3.0</a>, except where otherwise stated.
+          </span>
+        </div>
+        <div class="govuk-footer__meta-item">
+          <a class="govuk-footer__link govuk-footer__copyright-logo" href="#">© Crown copyright</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-.gmca-button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  font-weight: 700;
-  text-decoration: none;
-  color: white;
-  border-bottom: 3px solid #0b0c0c;
-  border-radius: 4px;
-  text-align: center;
-  min-width: 160px;
-}
-
-.gmca-button--teal {
-  background-color: #00857a;
-}
-
-.gmca-button--teal:hover {
-  background-color: #006f65;
-}
-
-.gmca-button--purple {
-  background-color: #4b2c92;
-}
-
-.gmca-button--purple:hover {
-  background-color: #3c2273;
-}
-
-/* Info section */
-main {
-  padding: 3rem 0;
-}
-
-.govuk-inset-text {
-  border-left: 5px solid #1d70b8;
-  background-color: #f3f2f1;
-  padding: 1rem;
-  margin: 2rem 0;
-}
-
-/* Footer */
-.govuk-footer {
-  margin-top: 3rem;
-  border-top: 4px solid #4b2c92;
-}
-
-/* Responsive */
-@media (max-width: 640px) {
-  .gmca-buttons {
-    flex-direction: column;
-  }
-
-  .gmca-button {
-    width: 100%;
-  }
-}
+  <script src="https://cdn.jsdelivr.net/npm/govuk-frontend@4.13.0/dist/govuk-frontend-4.13.0.min.js"></script>
+  <script>window.GOVUKFrontend.initAll();</script>
+</body>
+</html>
