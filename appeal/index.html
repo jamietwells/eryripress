@@ -1,110 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>GMCA – Appeal a Parking Fine</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+/* Import base GMCA styling */
+@import url("../start/style.css");
 
-  <!-- GOV.UK Frontend CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/govuk-frontend@4.13.0/dist/govuk-frontend-4.13.0.min.css">
-  <link rel="stylesheet" href="style.css">
-</head>
+/* ----------------------------
+   Appeal Page Adjustments
+----------------------------- */
 
-<body>
-  <!-- Header -->
-  <header class="gmca-header">
-    <div class="gmca-header__container">
-      <div class="gmca-header__left">
-        <a href="https://www.greatermanchester-ca.gov.uk/" target="_blank" rel="noopener">
-          <img src="../icon3.svg" alt="GMCA logo" class="gmca-logo">
-        </a>
-        <h1>Greater Manchester Combined Authority</h1>
-      </div>
-    </div>
-  </header>
+/* Content area readability */
+.gmca-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
 
-  <!-- Search bar -->
-  <div class="gmca-search-bar">
-    <div class="gmca-search-container">
-      <form id="gmca-search-form">
-        <input id="gmca-search-input" type="text" placeholder="Search Greater Manchester Combined Authority...">
-        <button type="submit">Search</button>
-      </form>
-    </div>
-  </div>
+/* Left alignment and consistent intro spacing */
+.gmca-intro {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  padding-left: 0.5rem;
+  text-align: left;
+}
 
-  <!-- Breadcrumb -->
-  <nav class="gmca-breadcrumb">
-    <a href="https://www.greatermanchester-ca.gov.uk/">Home</a> ›
-    <a href="/">Pay or appeal a parking fine</a> ›
-    <span>Appeal a fine</span>
-  </nav>
+/* Headings */
+.gmca-main h2,
+.gmca-intro h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #0b0c0c;
+}
 
-  <!-- Main content -->
-  <main class="gmca-main">
-    <div class="gmca-intro">
-      <h2>Appeal a Penalty Charge Notice (PCN)</h2>
-      <p>If you have received a Penalty Charge Notice (PCN) and wish to appeal, you need to do this within <strong>28 days</strong>.</p>
-      <p>If you make your appeal within <strong>14 days</strong> of the date of the PCN, the discount rate will be re-offered if your appeal is unsuccessful.</p>
-    </div>
+.gmca-main h3,
+.gmca-intro h3 {
+  font-size: 1.25rem;
+  color: #3B6E83;
+  margin-bottom: 1rem;
+  margin-top: 1.25rem;
+  font-weight: 700;
+}
 
-    <div class="govuk-inset-text">
-      <p><strong>Send your appeal by email to:</strong> <a href="mailto:appeals@gmcaparking.co.uk" class="govuk-link">appeals@gmcaparking.co.uk</a></p>
-      <p>We are unable to advise on appeals or process them over the phone.</p>
-      <p><em>Please note:</em> a penalty may take up to 24 working hours to appear on our online system.</p>
-    </div>
+/* Paragraphs and text spacing */
+.gmca-main p {
+  margin-bottom: 1rem;
+  text-align: left;
+  color: #0b0c0c;
+  line-height: 1.65;
+}
 
-    <h3>Make an appeal</h3>
-    <p>If your appeal has been rejected and you still want to appeal, then you must wait for the <strong>Notice to Owner (NtO)</strong> to make your next appeal.</p>
+/* Bullet list spacing */
+.gmca-main ul {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.25rem;
+}
 
-    <h3>Notice to Owner (NtO)</h3>
-    <p>When you receive the NtO in the post, you have two options available. You can make the payment or you can make a representation.</p>
-    <p>You need to make your representation within <strong>28 days</strong> of receiving the letter. We will review your reasons and write to you with our decision.</p>
+/* Inset text (email section) */
+.govuk-inset-text {
+  background-color: #F5F6FA;
+  border-left: 6px solid #3B6E83;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+}
 
-    <h3>Notice of Rejection (NoR)</h3>
-    <p>You will receive a NoR if your representation against the NtO is unsuccessful. You still have the option of appealing; this must be made to the <strong>Traffic Penalty Tribunal (TPT)</strong> within 28 days of the NoR.</p>
-    <p>The TPT is independent from GMCA and will consider your next appeal separately.</p>
+/* Links inside inset */
+.govuk-inset-text a {
+  color: #3B6E83;
+  font-weight: 700;
+  text-decoration: underline;
+}
 
-    <h3>Charge Certificate</h3>
-    <p>If you have received a Charge Certificate you can no longer appeal the charge. You can pay at the current rate or wait for the <strong>Order of Recovery (OfR)</strong>.</p>
+.govuk-inset-text a:hover {
+  text-decoration: none;
+}
 
-    <h3>Order of Recovery</h3>
-    <p>When you receive the OfR you can no longer appeal the charge. You can pay at the current rate or make a <strong>witness statement</strong> to the Traffic Enforcement Centre (TEC).</p>
-    <p>You can make a witness statement to the TEC based on the following grounds:</p>
+/* PAY A FINE button at bottom */
+.gmca-buttons {
+  text-align: center;
+  margin-top: 3rem;
+}
 
-    <ul class="govuk-list govuk-list--bullet">
-      <li>You did not receive the PCN or NtO</li>
-      <li>You made representations to us but did not receive a response</li>
-      <li>You made an appeal to TPT but did not receive a response</li>
-      <li>You paid the PCN</li>
-    </ul>
+.gmca-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #fff;
+  border-bottom: 3px solid #0b0c0c;
+}
 
-    <h3>Enforcement agents (bailiffs)</h3>
-    <p>If your PCN has been sent to enforcement agents, you need to contact them directly or the TEC as described above.</p>
+.gmca-button.teal {
+  background-color: #3B6E83;
+}
 
-    <div class="gmca-buttons" style="margin-top: 3rem;">
-      <a href="/portal" class="gmca-button teal">PAY A FINE</a>
-    </div>
-  </main>
+.gmca-button.teal:hover {
+  background-color: #305c6d;
+}
 
-  <!-- Footer -->
-  <footer class="gmca-footer">
-    <p>© Greater Manchester Combined Authority 2025</p>
-  </footer>
+/* Responsive layout */
+@media (max-width: 700px) {
+  .gmca-main {
+    padding: 1.5rem 1rem;
+    font-size: 1rem;
+  }
 
-  <!-- Search redirect JS -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const form = document.getElementById("gmca-search-form");
-      const input = document.getElementById("gmca-search-input");
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const query = encodeURIComponent(input.value.trim());
-        if (query) {
-          window.location.href = `https://www.greatermanchester-ca.gov.uk/search?Query=${query}`;
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+  .gmca-main h2 {
+    font-size: 1.5rem;
+  }
+
+  .gmca-main h3 {
+    font-size: 1.15rem;
+  }
+
+  .gmca-button {
+    width: 100%;
+  }
+}
