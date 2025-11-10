@@ -3,30 +3,64 @@
 ----------------------------------------- */
 
 .gmca-intro {
-  max-width: 700px;
+  max-width: 720px;
   margin: 0 auto 3rem;
-  padding-left: 0.5rem;
+  padding: 1.5rem 1rem 2rem 1rem;
+  background: #ffffff;
+  border-left: 5px solid #3B6E83;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
   text-align: left;
 }
 
+/* Main heading */
 .gmca-intro h2 {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: 700;
   color: #0b0c0c;
   margin-bottom: 0.5rem;
-  text-align: left;
 }
 
+/* Subheading */
 .gmca-intro h3 {
   font-size: 1.25rem;
   color: #3B6E83; /* GMCA teal */
   margin-bottom: 1rem;
-  text-align: left;
+  font-weight: 700;
 }
 
+/* Body text */
 .gmca-intro p {
   font-size: 1.05rem;
-  line-height: 1.6;
+  line-height: 1.7;
   color: #0b0c0c;
-  text-align: left;
+  margin: 0;
+}
+
+/* Optional top separator (for desktop polish) */
+@media (min-width: 700px) {
+  .gmca-intro {
+    padding-left: 1.75rem;
+  }
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+  .gmca-intro {
+    margin: 1rem;
+    padding: 1rem;
+    border-left-width: 4px;
+  }
+
+  .gmca-intro h2 {
+    font-size: 1.6rem;
+  }
+
+  .gmca-intro h3 {
+    font-size: 1.15rem;
+  }
+
+  .gmca-intro p {
+    font-size: 1rem;
+  }
 }
