@@ -1,1 +1,109 @@
+/* Import base GMCA styling */
+@import url("../style.css");
 
+/* ----------------------------
+   Appeal Page Adjustments
+----------------------------- */
+
+/* Content area readability */
+.gmca-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* Headings */
+.gmca-main h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #0b0c0c;
+}
+
+.gmca-main h3 {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: #3B6E83;
+  font-weight: 700;
+}
+
+/* Paragraphs and text spacing */
+.gmca-main p {
+  margin-bottom: 1rem;
+}
+
+/* Bullet list spacing */
+.gmca-main ul {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.25rem;
+}
+
+/* Inset text (email section) */
+.govuk-inset-text {
+  background-color: #F5F6FA;
+  border-left: 6px solid #3B6E83;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+}
+
+/* Links inside inset */
+.govuk-inset-text a {
+  color: #3B6E83;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.govuk-inset-text a:hover {
+  text-decoration: none;
+}
+
+/* PAY A FINE button at bottom */
+.gmca-buttons {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.gmca-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #fff;
+  border-bottom: 3px solid #0b0c0c;
+}
+
+.gmca-button.teal {
+  background-color: #3B6E83;
+}
+
+.gmca-button.teal:hover {
+  background-color: #305c6d;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+  .gmca-main {
+    padding: 1.5rem 1rem;
+    font-size: 1rem;
+  }
+
+  .gmca-main h2 {
+    font-size: 1.5rem;
+  }
+
+  .gmca-main h3 {
+    font-size: 1.15rem;
+  }
+
+  .gmca-button {
+    width: 100%;
+  }
+}
