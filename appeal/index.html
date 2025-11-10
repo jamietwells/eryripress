@@ -80,4 +80,31 @@
     </ul>
 
     <h3>Enforcement agents (bailiffs)</h3>
-    <p>If your PCN has been sent to enforcement agents, then you need to speak to them or
+    <p>If your PCN has been sent to enforcement agents, then you need to speak to them or contact the TEC as described above.</p>
+
+    <div class="gmca-buttons" style="margin-top: 3rem;">
+      <a href="/portal" class="gmca-button teal">PAY A FINE</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="gmca-footer">
+    <p>© Greater Manchester Combined Authority 2025</p>
+  </footer>
+
+  <!-- Search redirect JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("gmca-search-form");
+      const input = document.getElementById("gmca-search-input");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const query = encodeURIComponent(input.value.trim());
+        if (query) {
+          window.location.href = `https://www.greatermanchester-ca.gov.uk/search?Query=${query}`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
