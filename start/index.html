@@ -25,3 +25,69 @@
         <a href="#" class="gmca-icon-link">MyAccount</a>
       </div>
     </div>
+  </header>
+
+  <!-- Search bar -->
+  <div class="gmca-search-bar">
+    <div class="gmca-search-container">
+      <form id="gmca-search-form">
+        <input id="gmca-search-input" type="text" placeholder="Search Greater Manchester Combined Authority..." />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Breadcrumb -->
+  <nav class="gmca-breadcrumb">
+    <a href="#">Home</a> ›
+    <a href="#">Transport and roads</a> ›
+    <a href="#">Parking and permits</a> ›
+    <span>Pay or appeal a parking fine</span>
+  </nav>
+
+  <!-- Main content -->
+  <main class="gmca-main">
+    <h2>Civil parking enforcement</h2>
+
+    <section class="gmca-section-card">
+      <h3>In this section</h3>
+      <ol>
+        <li><span class="circle">1</span> Overview</li>
+        <li><span class="circle active">2</span> Pay or appeal a parking or bus lane fine</li>
+        <li><span class="circle">3</span> Appeal a parking, bus lane or moving traffic penalty</li>
+      </ol>
+    </section>
+
+    <section class="gmca-content">
+      <h3>Pay or appeal a parking or bus lane fine</h3>
+      <p>You can use this service to pay or appeal a Penalty Charge Notice (PCN) issued within Greater Manchester.</p>
+
+      <div class="gmca-buttons">
+        <a href="/portal" class="gmca-button teal">Pay a new fine</a>
+        <a href="/appeal" class="gmca-button purple">Appeal</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="gmca-footer">
+    <p>© Greater Manchester Combined Authority 2025</p>
+  </footer>
+
+  <!-- JS for Search Redirect -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchForm = document.getElementById("gmca-search-form");
+      const searchInput = document.getElementById("gmca-search-input");
+
+      searchForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const query = encodeURIComponent(searchInput.value.trim());
+        if (query) {
+          window.location.href = `https://www.greatermanchester-ca.gov.uk/search?Query=${query}`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
