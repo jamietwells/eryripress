@@ -14,25 +14,38 @@
   font-size: 1.05rem;
 }
 
+/* Left alignment and consistent intro spacing */
+.gmca-intro {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  padding-left: 0.5rem;
+  text-align: left;
+}
+
 /* Headings */
-.gmca-main h2 {
-  font-size: 1.75rem;
+.gmca-main h2,
+.gmca-intro h2 {
+  font-size: 1.8rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   color: #0b0c0c;
 }
 
-.gmca-main h3 {
+.gmca-main h3,
+.gmca-intro h3 {
   font-size: 1.25rem;
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
   color: #3B6E83;
+  margin-bottom: 1rem;
+  margin-top: 1.25rem;
   font-weight: 700;
 }
 
 /* Paragraphs and text spacing */
 .gmca-main p {
   margin-bottom: 1rem;
+  text-align: left;
+  color: #0b0c0c;
+  line-height: 1.65;
 }
 
 /* Bullet list spacing */
