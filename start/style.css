@@ -1,41 +1,213 @@
-/* General */
+/* General layout */
 body {
-  background-color: #ffffff;
   font-family: "GDS Transport", Arial, sans-serif;
   color: #0b0c0c;
+  background-color: #ffffff;
   margin: 0;
 }
 
 /* Header */
 .gmca-header {
-  background-color: #502D63; /* GMCA Purple */
-  color: white;
-  padding: 1rem 0;
+  background-color: #502D63;
+  color: #ffffff;
+  padding: 0.75rem 0;
 }
 
 .gmca-header__container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  max-width: 960px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
+.gmca-header__left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .gmca-logo {
-  height: 48px;
-  width: auto;
-  margin-right: 1rem;
+  height: 40px;
 }
 
-.gmca-title {
-  font-size: 1.5rem;
+.gmca-header__right a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-weight: 500;
+}
+
+.gmca-header__right a:hover {
+  text-decoration: underline;
+}
+
+/* Search bar */
+.gmca-search-bar {
+  background-color: #1a1833;
+  padding: 0.75rem 0;
+}
+
+.gmca-search-container {
+  display: flex;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.gmca-search-container input {
+  flex-grow: 1;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: none;
+}
+
+.gmca-search-container button {
+  background-color: #C7511F;
+  color: #fff;
+  border: none;
+  padding: 0 1.25rem;
+  font-size: 1rem;
   font-weight: 700;
-  margin: 0;
+  cursor: pointer;
 }
 
-/* Hero section */
-.gmca-hero {
-  background-color: #F4F2F9; /* Light purple background */
-  padding: 3rem 0 2rem;
-  text-align: left;
+.gmca-search-container button:hover {
+  background-color: #a04016;
+}
+
+/* Breadcrumb */
+.gmca-breadcrumb {
+  max-width: 1100px;
+  margin: 1rem auto;
+  padding: 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+.gmca-breadcrumb a {
+  color: #3B6E83;
+  text-decoration: none;
+}
+
+.gmca-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* Section card */
+.gmca-section-card {
+  background-color: #F5F6FA;
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+}
+
+.gmca-section-card h3 {
+  margin-top: 0;
+}
+
+.gmca-section-card ol {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.gmca-section-card li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.circle {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #ddd;
+  font-size: 0.9rem;
+  color: #000;
+}
+
+.circle.active {
+  background-color: #3B6E83;
+  color: #fff;
+}
+
+/* Content */
+.gmca-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.gmca-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.gmca-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 3px solid #0b0c0c;
+  border-radius: 4px;
+}
+
+.gmca-button.teal {
+  background-color: #3B6E83;
+}
+
+.gmca-button.teal:hover {
+  background-color: #305c6d;
+}
+
+.gmca-button.purple {
+  background-color: #502D63;
+}
+
+.gmca-button.purple:hover {
+  background-color: #3f2251;
+}
+
+/* Footer */
+.gmca-footer {
+  background-color: #f3f2f1;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .gmca-header__container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gmca-header__right {
+    margin-top: 0.5rem;
+  }
+
+  .gmca-search-container {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+
+  .gmca-buttons {
+    flex-direction: column;
+  }
+
+  .gmca-button {
+    width: 100%;
+  }
 }
