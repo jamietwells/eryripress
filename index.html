@@ -1,142 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>403 Forbidden</title>
-  <style>
-    :root {
-      --bg: #0b0d10;
-      --fg: #e7edf3;
-      --muted: #93a1b1;
-      --border: #1f272e;
-      --card: #12161a;
-      --accent: #4da3ff;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-    }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f7fafc;
-        --fg: #0b1220;
-        --muted: #576071;
-        --border: #e6edf5;
-        --card: #ffffff;
-        --accent: #1e66ff;
-        --shadow: 0 10px 24px rgba(2, 36, 86, 0.08);
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script>
+      // Only redirect if user is on the home page (no path)
+      if (
+        window.location.pathname === "/" ||
+        window.location.pathname === "/index.html"
+      ) {
+        window.location.replace("https://www.eryripress.co.uk/start");
       }
-    }
-    * {
-      box-sizing: border-box;
-    }
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      background: radial-gradient(1200px 800px at 50% -200px, rgba(77, 163, 255, 0.12), transparent 60%), var(--bg);
-      color: var(--fg);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      text-align: center;
-    }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 32px;
-      max-width: 700px;
-      box-shadow: var(--shadow);
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--muted);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 6px 12px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.03), rgba(0,0,0,0.03));
-    }
-    .badge svg {
-      width: 16px;
-      height: 16px;
-      opacity: 0.9;
-    }
-    h1 {
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      line-height: 1.2;
-      margin: 1rem 0 0.5rem;
-    }
-    p {
-      color: var(--muted);
-      font-size: 1.05rem;
-      margin: 0 0 1rem;
-    }
-    .mono {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 0.95rem;
-    }
-    .meta {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-      margin-top: 18px;
-    }
-    @media (min-width: 560px) {
-      .meta {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    .meta .item {
-      border: 1px dashed var(--border);
-      border-radius: 10px;
-      padding: 10px 12px;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
-    }
-    .actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-    .btn {
-      border: 1px solid var(--border);
-      background: var(--card);
-      color: var(--fg);
-      padding: 10px 14px;
-      border-radius: 12px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.06s ease, border-color 0.2s ease;
-    }
-    .btn:hover {
-      border-color: var(--accent);
-    }
-    .btn:active {
-      transform: translateY(1px);
-    }
-    .btn.primary {
-      background: linear-gradient(180deg, rgba(77, 163, 255, 0.18), rgba(77, 163, 255, 0.12));
-      border-color: rgba(77, 163, 255, 0.55);
-    }
-    .footnote {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-top: 16px;
-    }
-  </style>
-</head>
-<body>
-  <div class="card" role="group" aria-roledescription="403 Forbidden">
-    <span class="badge">
-      <svg xmlns="http://www.w3.org/
+    </script>
+  </head>
+  <body>
+    <p>If you are not redirected automatically, 
+       <a href="https://www.eryripress.co.uk/start">click here</a>.</p>
+  </body>
+</html>
