@@ -1,179 +1,28 @@
-/* General layout */
-body {
-  font-family: "GDS Transport", Arial, sans-serif;
+/* Intro section alignment */
+.gmca-intro {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  padding-left: 0.5rem;
+}
+
+.gmca-intro h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
   color: #0b0c0c;
-  background-color: #ffffff;
-  margin: 0;
+  margin-bottom: 0.5rem;
+  text-align: left;
 }
 
-/* Header */
-.gmca-header {
-  background-color: #502D63;
-  color: #ffffff;
-  padding: 0.75rem 0;
-}
-
-.gmca-header__container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.gmca-header__left {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.gmca-logo {
-  height: 40px;
-}
-
-/* Search bar */
-.gmca-search-bar {
-  background-color: #1a1833;
-  padding: 0.75rem 0;
-}
-
-.gmca-search-container {
-  display: flex;
-  justify-content: flex-start;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.gmca-search-container form {
-  display: flex;
-  flex: 1;
-  max-width: 800px;
-}
-
-.gmca-search-container input {
-  flex: 1;
-  padding: 0.6rem;
-  font-size: 1rem;
-  border: none;
-  outline: none;
-}
-
-.gmca-search-container button {
-  background-color: #3B6E83; /* Teal */
-  color: #fff;
-  border: none;
-  padding: 0 1.25rem;
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.gmca-search-container button:hover {
-  background-color: #305c6d;
-}
-
-/* Breadcrumb */
-.gmca-breadcrumb {
-  max-width: 1100px;
-  margin: 1rem auto;
-  padding: 0 1.5rem;
-  font-size: 0.95rem;
-}
-
-.gmca-breadcrumb a {
+.gmca-intro h3 {
+  font-size: 1.25rem;
   color: #3B6E83;
-  text-decoration: none;
+  margin-bottom: 1rem;
+  text-align: left;
 }
 
-.gmca-breadcrumb a:hover {
-  text-decoration: underline;
-}
-
-/* Section card */
-.gmca-section-card {
-  background-color: #F5F6FA;
-  border-radius: 6px;
-  padding: 1.25rem 1.5rem;
-  margin: 2rem 0;
-}
-
-.gmca-section-card h3 {
-  margin: 0;
-}
-
-/* Main content */
-.gmca-main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 1.5rem;
-}
-
-.gmca-buttons {
-  margin-top: 2.5rem;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.gmca-button {
-  display: inline-block;
-  padding: 1rem 2rem;
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: #fff;
-  text-decoration: none;
-  border-bottom: 3px solid #0b0c0c;
-  border-radius: 4px;
-  text-transform: uppercase;
-  text-align: center;
-  min-width: 180px;
-}
-
-.gmca-button.teal {
-  background-color: #3B6E83;
-}
-
-.gmca-button.teal:hover {
-  background-color: #305c6d;
-}
-
-.gmca-button.purple {
-  background-color: #502D63;
-}
-
-.gmca-button.purple:hover {
-  background-color: #3f2251;
-}
-
-/* Footer */
-.gmca-footer {
-  background-color: #f3f2f1;
-  text-align: center;
-  padding: 2rem 1rem;
-  margin-top: 3rem;
-  font-size: 0.9rem;
-}
-
-/* Responsive */
-@media (max-width: 700px) {
-  .gmca-header__container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .gmca-search-container {
-    padding: 0 1rem;
-  }
-
-  .gmca-buttons {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .gmca-button {
-    width: 100%;
-  }
+.gmca-intro p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  text-align: left;
+  color: #0b0c0c;
 }
