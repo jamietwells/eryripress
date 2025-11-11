@@ -1,5 +1,5 @@
 /* ==========================================================
-   GMCA Parking Portal – Unified Styles (Start + Appeal Pages)
+   GMCA Parking Portal – Clean Unified Styles
    Colours: Teal #3B6E83 | Purple #502D63
 ========================================================== */
 
@@ -19,17 +19,16 @@ body {
 --------------------------------*/
 .gmca-header {
   background-color: #502D63; /* GMCA purple */
-  padding: 1rem 0;
+  padding: 1rem 0 0.25rem;
 }
 
 .gmca-header__container {
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 1rem;
-  flex-wrap: wrap; /* allows stacking on mobile */
+  justify-content: flex-start;
 }
 
 .gmca-logo {
@@ -37,32 +36,28 @@ body {
   width: auto;
 }
 
-.gmca-header__title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #fff;
-  margin: 0;
-  letter-spacing: 1px;
+/* -------------------------------
+   Search Bar (new line, aligned left)
+--------------------------------*/
+.gmca-search-bar {
+  background-color: #502D63;
+  padding: 0.5rem 1rem 1rem;
 }
 
-/* -------------------------------
-   Search (aligned within header)
---------------------------------*/
 .gmca-search-container {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #3B6E83;
-  padding: 0.5rem 0.75rem;
-  border-radius: 4px;
+  max-width: 500px;
 }
 
 .gmca-search-container input {
   flex: 1;
-  padding: 0.5rem 0.75rem;
+  padding: 0.6rem 0.75rem;
   font-size: 1rem;
   border: none;
   border-radius: 3px;
+  background-color: #fff;
 }
 
 .gmca-search-container button {
@@ -78,11 +73,6 @@ body {
 
 .gmca-search-container button:hover {
   background-color: #305c6d;
-}
-
-/* Hide search bar for pages that use <body class="no-search"> */
-.no-search .gmca-search-container {
-  display: none;
 }
 
 /* -------------------------------
@@ -244,36 +234,11 @@ body {
 }
 
 /* -------------------------------
-   Left-aligned appeal text
---------------------------------*/
-.gmca-main,
-.gmca-main h2,
-.gmca-main h3,
-.gmca-main p,
-.gmca-main ul,
-.gmca-main li,
-.govuk-inset-text {
-  text-align: left;
-}
-
-/* -------------------------------
    Responsive
 --------------------------------*/
 @media (max-width: 700px) {
-  .gmca-header__container {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .gmca-header__title {
-    font-size: 2rem;
-    text-align: center;
-  }
-
   .gmca-search-container {
     width: 100%;
-    justify-content: center;
   }
 
   .gmca-search-container input {
