@@ -7,7 +7,9 @@
 
   <!-- GOV.UK Frontend CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/govuk-frontend@4.13.0/dist/govuk-frontend-4.13.0.min.css">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -18,15 +20,17 @@
         <img src="https://eryripress.co.uk/icon3.svg" alt="GMCA logo" class="gmca-logo">
       </a>
     </div>
+  </header>
 
-    <!-- Search (on its own line, left-aligned) -->
-    <div class="gmca-search-bar">
-      <form id="gmca-search-form" class="gmca-search-container">
+  <!-- Search bar -->
+  <div class="gmca-search-bar">
+    <div class="gmca-search-container">
+      <form id="gmca-search-form">
         <input id="gmca-search-input" type="text" placeholder="Search Greater Manchester Combined Authority...">
         <button type="submit">Search</button>
       </form>
     </div>
-  </header>
+  </div>
 
   <!-- Breadcrumb -->
   <nav class="gmca-breadcrumb">
@@ -34,13 +38,28 @@
     <span>Parking Fines</span>
   </nav>
 
+  <!-- JS for Search Redirect -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchForm = document.getElementById("gmca-search-form");
+      const searchInput = document.getElementById("gmca-search-input");
+
+      searchForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const query = encodeURIComponent(searchInput.value.trim());
+        if (query) {
+          window.location.href = `https://www.greatermanchester-ca.gov.uk/search?Query=${query}`;
+        }
+      });
+    });
+  </script>
+
   <!-- Main content -->
   <main class="gmca-main">
-    <div class="gmca-intro">
-      <h2>Civil parking enforcement</h2>
-      <h3>Pay or appeal a parking or bus lane fine</h3>
-      <p>You can use this service to pay or appeal a Penalty Charge Notice (PCN) issued within Greater Manchester.</p>
-    </div>
+    <h2>Civil parking enforcement</h2>
+
+    <h3>Pay or appeal a parking or bus lane fine</h3>
+    <p>You can use this service to pay or appeal a Penalty Charge Notice (PCN) issued within Greater Manchester.</p>
 
     <div class="gmca-buttons">
       <a href="/portal/" class="gmca-button teal">PAY A FINE</a>
@@ -52,20 +71,5 @@
   <footer class="gmca-footer">
     <p>© Greater Manchester Combined Authority 2025</p>
   </footer>
-
-  <!-- Search redirect JS -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const form = document.getElementById("gmca-search-form");
-      const input = document.getElementById("gmca-search-input");
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const query = encodeURIComponent(input.value.trim());
-        if (query) {
-          window.location.href = `https://www.greatermanchester-ca.gov.uk/search?Query=${query}`;
-        }
-      });
-    });
-  </script>
 </body>
 </html>
