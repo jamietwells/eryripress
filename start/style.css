@@ -1,30 +1,31 @@
 /* ==========================================================
    GMCA Parking Portal – Start Page Styles
-   Author: ChatGPT for GMCA
+   Final version (with contained layout)
    ========================================================== */
 
 /* ----------------------------
    Base layout and typography
 ----------------------------- */
 body {
-  background-color: #f8f8f8;
+  background-color: #f5f5f5; /* Soft GOV.UK-style grey */
   font-family: "GDS Transport", Arial, sans-serif;
   color: #0b0c0c;
   margin: 0;
   padding: 0;
+  line-height: 1.6;
 }
 
 h1, h2, h3, p {
   margin: 0;
+  padding: 0;
 }
 
 /* ----------------------------
-   Header (GMCA top section)
+   Header (logo only)
 ----------------------------- */
 .gmca-header {
   background-color: #502D63; /* GMCA purple */
-  color: #ffffff;
-  padding: 1rem 0;
+  padding: 0.75rem 0;
 }
 
 .gmca-header__container {
@@ -37,15 +38,8 @@ h1, h2, h3, p {
 }
 
 .gmca-logo {
-  height: 45px;
+  height: 50px;
   width: auto;
-  margin-right: 1rem;
-}
-
-.gmca-header__container h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #ffffff;
 }
 
 /* ----------------------------
@@ -73,7 +67,7 @@ h1, h2, h3, p {
 
 .gmca-search-container input {
   flex-grow: 1;
-  padding: 0.5rem 0.75rem;
+  padding: 0.6rem 0.75rem;
   font-size: 1rem;
   border: none;
   border-radius: 4px 0 0 4px;
@@ -84,7 +78,7 @@ h1, h2, h3, p {
   background-color: #305c6d;
   color: #fff;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1rem;
   font-weight: 700;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
@@ -115,7 +109,20 @@ h1, h2, h3, p {
 }
 
 /* ----------------------------
-   Intro section (main content)
+   Contained white panel layout
+----------------------------- */
+.govuk-width-container {
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* ----------------------------
+   Main content area
 ----------------------------- */
 .gmca-main {
   max-width: 900px;
@@ -124,13 +131,13 @@ h1, h2, h3, p {
   text-align: center;
 }
 
+/* Intro content box */
 .gmca-intro {
   max-width: 720px;
   margin: 0 auto 3rem;
-  padding: 1.5rem 1rem 2rem 1rem;
+  padding: 1.75rem 1.25rem;
   background: #ffffff;
   border-left: 5px solid #3B6E83;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
   text-align: left;
 }
@@ -156,7 +163,7 @@ h1, h2, h3, p {
 }
 
 /* ----------------------------
-   Buttons
+   Buttons (Pay / Appeal)
 ----------------------------- */
 .gmca-buttons {
   text-align: center;
@@ -166,9 +173,9 @@ h1, h2, h3, p {
 
 .gmca-button {
   display: inline-block;
-  margin: 0.5rem 1rem;
+  margin: 0.75rem 1rem;
   padding: 1rem 2.5rem;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
@@ -210,17 +217,16 @@ h1, h2, h3, p {
 }
 
 /* ----------------------------
-   Responsive adjustments
+   Responsive layout
 ----------------------------- */
 @media (max-width: 700px) {
   .gmca-header__container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
-  .gmca-header__container h1 {
-    font-size: 1.25rem;
-    margin-top: 0.5rem;
+  .gmca-logo {
+    height: 42px;
   }
 
   .gmca-search-container {
@@ -239,8 +245,12 @@ h1, h2, h3, p {
     margin-bottom: 0.5rem;
   }
 
-  .gmca-intro {
+  .govuk-width-container {
     margin: 1rem;
+    padding: 1.25rem;
+  }
+
+  .gmca-intro {
     padding: 1rem;
   }
 
@@ -259,7 +269,7 @@ h1, h2, h3, p {
   .gmca-button {
     display: block;
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
     margin: 0.75rem auto;
   }
 }
