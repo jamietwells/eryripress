@@ -40,15 +40,14 @@
   </nav>
 
   <!-- Main content -->
-  <main class="govuk-width-container" id="main-content">
+  <main class="gmca-main">
     <div class="lookup-card">
-
-      <h1 class="page-title">Penalty Charge Notice Portal</h1>
+      <h2 class="page-title">Penalty Charge Notice Portal</h2>
       <p class="page-subtitle">Enter your Penalty Charge Notice (PCN) number and vehicle registration.</p>
 
       <form id="pcn-form" novalidate>
         <!-- Error summary -->
-        <div id="error-summary" class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary" style="display:none;">
+        <div id="error-summary" class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" style="display:none;">
           <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
           <div class="govuk-error-summary__body">
             <ul id="error-list" class="govuk-list govuk-error-summary__list"></ul>
@@ -62,14 +61,16 @@
           <input class="form-input" id="PCN" name="PCN" type="text" maxlength="10" autocomplete="off" value="AW">
         </div>
 
-        <!-- Registration number -->
+        <!-- Vehicle registration -->
         <div class="form-group">
           <label for="VRM" class="form-label">Vehicle registration number</label>
           <div class="form-hint">Enter your vehicle’s registration number (number plate).</div>
           <input class="form-input" id="VRM" name="VRM" type="text" maxlength="24" autocomplete="off" required>
         </div>
 
-        <button type="submit" class="gmca-button teal">Search</button>
+        <div style="text-align:center; margin-top:1.5rem;">
+          <button type="submit" class="gmca-button teal">Search</button>
+        </div>
       </form>
 
       <div class="bottom-text">
@@ -78,9 +79,11 @@
     </div>
   </main>
 
+  <footer class="gmca-footer"></footer>
+
   <script>
-    // Search bar behavior
     document.addEventListener("DOMContentLoaded", function() {
+      // Search bar
       const searchForm = document.getElementById("gmca-search-form");
       const searchInput = document.getElementById("gmca-search-input");
 
@@ -92,7 +95,7 @@
         }
       });
 
-      // PCN form validation
+      // PCN validation
       const form = document.getElementById("pcn-form");
       const errorSummary = document.getElementById("error-summary");
       const errorList = document.getElementById("error-list");
@@ -105,12 +108,10 @@
 
         let errors = [];
 
-        // PCN validation
         if (pcn.length !== 10 || !pcn.startsWith("AW") || !/^[A-Z0-9]+$/.test(pcn)) {
           errors.push("Your PCN number must start with AW and be exactly 10 characters long.");
         }
 
-        // VRM validation (required)
         if (!vrm) {
           errors.push("You must enter your vehicle registration number.");
         }
@@ -120,9 +121,7 @@
           return;
         }
 
-        // Redirect to payment
-        const payUrl = `/pay?pcn=${encodeURIComponent(pcn)}&vrm=${encodeURIComponent(vrm)}`;
-        window.location.href = payUrl;
+        window.location.href = `/pay?pcn=${encodeURIComponent(pcn)}&vrm=${encodeURIComponent(vrm)}`;
       });
 
       function showErrors(errors) {
