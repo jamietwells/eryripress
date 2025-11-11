@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- GOV.UK Frontend CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/govuk-frontend@4.13.0/dist/govuk-frontend-4.13.0.min.css">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/govuk-frontend@4.13.0/dist/govuk-frontend-4.13.0.min.css">
 
   <!-- Custom styles -->
   <link rel="stylesheet" href="../start/style.css">
@@ -27,7 +28,8 @@
   <div class="gmca-search-bar">
     <div class="gmca-search-container">
       <form id="gmca-search-form">
-        <input id="gmca-search-input" type="text" placeholder="Search Greater Manchester Combined Authority...">
+        <input id="gmca-search-input" type="text"
+          placeholder="Search Greater Manchester Combined Authority...">
         <button type="submit">Search</button>
       </form>
     </div>
@@ -36,19 +38,25 @@
   <!-- Breadcrumb -->
   <nav class="gmca-breadcrumb">
     <a href="https://www.greatermanchester-ca.gov.uk/">Home</a> ›
-    <span>Parking Fines</span>
+    <a href="/start">Parking Fines</a> ›
+    <span>Pay a Fine</span>
   </nav>
 
   <!-- Main content -->
   <main class="gmca-main">
     <div class="lookup-card">
       <h2 class="page-title">Penalty Charge Notice Portal</h2>
-      <p class="page-subtitle">Enter your Penalty Charge Notice (PCN) number and vehicle registration.</p>
+      <p class="page-subtitle">
+        Enter your Penalty Charge Notice (PCN) number and vehicle registration.
+      </p>
 
       <form id="pcn-form" novalidate>
         <!-- Error summary -->
-        <div id="error-summary" class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" style="display:none;">
-          <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+        <div id="error-summary" class="govuk-error-summary" role="alert" tabindex="-1"
+          style="display:none;">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
           <div class="govuk-error-summary__body">
             <ul id="error-list" class="govuk-list govuk-error-summary__list"></ul>
           </div>
@@ -57,20 +65,27 @@
         <!-- PCN number -->
         <div class="form-group">
           <label for="PCN" class="form-label">PCN number</label>
-          <div class="form-hint">Your PCN number starts with AW followed by 8 digits (example: AW12345678).</div>
-          <input class="form-input" id="PCN" name="PCN" type="text" maxlength="10" autocomplete="off" value="AW">
+          <div class="form-hint">
+            Your PCN number starts with AW followed by 8 digits (example: AW12345678).
+          </div>
+          <input class="form-input" id="PCN" name="PCN" type="text" maxlength="10"
+            autocomplete="off" value="AW">
         </div>
 
         <!-- Vehicle registration -->
         <div class="form-group">
           <label for="VRM" class="form-label">Vehicle registration number</label>
-          <div class="form-hint">Enter your vehicle’s registration number (number plate).</div>
-          <input class="form-input" id="VRM" name="VRM" type="text" maxlength="24" autocomplete="off" required>
+          <div class="form-hint">
+            Enter your vehicle’s registration number (number plate).
+          </div>
+          <input class="form-input" id="VRM" name="VRM" type="text" maxlength="24"
+            autocomplete="off" required>
         </div>
 
-        <div style="text-align:center; margin-top:1.5rem;">
-          <button type="submit" class="gmca-button teal">Search</button>
-        </div>
+        <!-- Button (left-aligned to form) -->
+        <button type="submit" class="gmca-button teal" style="margin-top:1rem;">
+          Search
+        </button>
       </form>
 
       <div class="bottom-text">
@@ -82,7 +97,7 @@
   <footer class="gmca-footer"></footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       // Search bar
       const searchForm = document.getElementById("gmca-search-form");
       const searchInput = document.getElementById("gmca-search-input");
@@ -91,7 +106,8 @@
         e.preventDefault();
         const query = encodeURIComponent(searchInput.value.trim());
         if (query) {
-          window.location.href = `https://www.greatermanchester-ca.gov.uk/search?Query=${query}`;
+          window.location.href =
+            `https://www.greatermanchester-ca.gov.uk/search?Query=${query}`;
         }
       });
 
@@ -100,7 +116,7 @@
       const errorSummary = document.getElementById("error-summary");
       const errorList = document.getElementById("error-list");
 
-      form.addEventListener("submit", function(e) {
+      form.addEventListener("submit", function (e) {
         e.preventDefault();
 
         const pcn = document.getElementById("PCN").value.trim().toUpperCase();
@@ -121,7 +137,8 @@
           return;
         }
 
-        window.location.href = `/pay?pcn=${encodeURIComponent(pcn)}&vrm=${encodeURIComponent(vrm)}`;
+        window.location.href =
+          `/pay?pcn=${encodeURIComponent(pcn)}&vrm=${encodeURIComponent(vrm)}`;
       });
 
       function showErrors(errors) {
