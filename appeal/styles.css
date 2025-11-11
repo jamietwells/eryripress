@@ -1,96 +1,189 @@
-/* Import base GMCA styling */
-@import url("../start/style.css");
+/* ==========================================================
+   GMCA Parking Portal – Start Page Styles
+   Final version (with contained layout)
+   ========================================================== */
 
 /* ----------------------------
-   Appeal Page Adjustments
+   Base layout and typography
 ----------------------------- */
+body {
+  background-color: #f5f5f5; /* Soft GOV.UK-style grey */
+  font-family: "GDS Transport", Arial, sans-serif;
+  color: #0b0c0c;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
 
-/* Content area readability */
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* ----------------------------
+   Header (logo only)
+----------------------------- */
+.gmca-header {
+  background-color: #502D63; /* GMCA purple */
+  padding: 0.75rem 0;
+}
+
+.gmca-header__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.gmca-logo {
+  height: 50px;
+  width: auto;
+}
+
+/* ----------------------------
+   Search bar
+----------------------------- */
+.gmca-search-bar {
+  background-color: #3B6E83; /* GMCA teal */
+  padding: 0.75rem 0;
+}
+
+.gmca-search-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.gmca-search-container form {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+}
+
+.gmca-search-container input {
+  flex-grow: 1;
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.gmca-search-container button {
+  background-color: #305c6d;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-weight: 700;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.gmca-search-container button:hover {
+  background-color: #234955;
+}
+
+/* ----------------------------
+   Breadcrumb navigation
+----------------------------- */
+.gmca-breadcrumb {
+  max-width: 1100px;
+  margin: 1rem auto;
+  padding: 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+.gmca-breadcrumb a {
+  color: #3B6E83;
+  text-decoration: underline;
+}
+
+.gmca-breadcrumb a:hover {
+  text-decoration: none;
+}
+
+/* ----------------------------
+   Contained white panel layout
+----------------------------- */
+.govuk-width-container {
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* ----------------------------
+   Main content area
+----------------------------- */
 .gmca-main {
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
-  line-height: 1.7;
-  font-size: 1.05rem;
+  text-align: center;
 }
 
-/* Left alignment and consistent intro spacing */
+/* Intro content box */
 .gmca-intro {
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  padding-left: 0.5rem;
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  padding: 1.75rem 1.25rem;
+  background: #ffffff;
+  border-left: 5px solid #3B6E83;
+  border-radius: 4px;
   text-align: left;
 }
 
-/* Headings */
-.gmca-main h2,
 .gmca-intro h2 {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
   color: #0b0c0c;
+  margin-bottom: 0.5rem;
 }
 
-.gmca-main h3,
 .gmca-intro h3 {
   font-size: 1.25rem;
   color: #3B6E83;
   margin-bottom: 1rem;
-  margin-top: 1.25rem;
   font-weight: 700;
 }
 
-/* Paragraphs and text spacing */
-.gmca-main p {
-  margin-bottom: 1rem;
-  text-align: left;
+.gmca-intro p {
+  font-size: 1.05rem;
+  line-height: 1.7;
   color: #0b0c0c;
-  line-height: 1.65;
 }
 
-/* Bullet list spacing */
-.gmca-main ul {
-  margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
-  padding-left: 1.25rem;
-}
-
-/* Inset text (email section) */
-.govuk-inset-text {
-  background-color: #F5F6FA;
-  border-left: 6px solid #3B6E83;
-  padding: 1rem 1.25rem;
-  margin: 1.5rem 0;
-  border-radius: 4px;
-}
-
-/* Links inside inset */
-.govuk-inset-text a {
-  color: #3B6E83;
-  font-weight: 700;
-  text-decoration: underline;
-}
-
-.govuk-inset-text a:hover {
-  text-decoration: none;
-}
-
-/* PAY A FINE button at bottom */
+/* ----------------------------
+   Buttons (Pay / Appeal)
+----------------------------- */
 .gmca-buttons {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 .gmca-button {
   display: inline-block;
+  margin: 0.75rem 1rem;
   padding: 1rem 2.5rem;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
-  border-radius: 4px;
-  color: #fff;
+  border-radius: 6px;
+  color: #ffffff;
   border-bottom: 3px solid #0b0c0c;
+  transition: all 0.2s ease;
+  letter-spacing: 0.5px;
 }
 
 .gmca-button.teal {
@@ -98,25 +191,85 @@
 }
 
 .gmca-button.teal:hover {
-  background-color: #305c6d;
+  background-color: #2d5564;
+  transform: translateY(-1px);
 }
 
-/* Responsive layout */
+.gmca-button.purple {
+  background-color: #502D63;
+}
+
+.gmca-button.purple:hover {
+  background-color: #3f2251;
+  transform: translateY(-1px);
+}
+
+/* ----------------------------
+   Footer
+----------------------------- */
+.gmca-footer {
+  background-color: #ffffff;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #505a5f;
+  padding: 2rem 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* ----------------------------
+   Responsive layout
+----------------------------- */
 @media (max-width: 700px) {
-  .gmca-main {
-    padding: 1.5rem 1rem;
-    font-size: 1rem;
+  .gmca-header__container {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .gmca-main h2 {
-    font-size: 1.5rem;
+  .gmca-logo {
+    height: 42px;
   }
 
-  .gmca-main h3 {
+  .gmca-search-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gmca-search-container form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .gmca-search-container input,
+  .gmca-search-container button {
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+
+  .govuk-width-container {
+    margin: 1rem;
+    padding: 1.25rem;
+  }
+
+  .gmca-intro {
+    padding: 1rem;
+  }
+
+  .gmca-intro h2 {
+    font-size: 1.6rem;
+  }
+
+  .gmca-intro h3 {
     font-size: 1.15rem;
   }
 
+  .gmca-intro p {
+    font-size: 1rem;
+  }
+
   .gmca-button {
+    display: block;
     width: 100%;
+    max-width: 320px;
+    margin: 0.75rem auto;
   }
 }
