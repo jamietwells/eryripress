@@ -240,3 +240,15 @@ body {
   background-color: #F3F2F1;
   color: #0b0c0c;
   te
+   /* -------------------------------
+   Ensure appeal text is left-aligned
+--------------------------------*/
+.gmca-main,
+.gmca-main h2,
+.gmca-main h3,
+.gmca-main p,
+.gmca-main ul,
+.gmca-main li,
+.govuk-inset-text {
+  text-align: left;
+}
