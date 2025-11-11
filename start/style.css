@@ -1,6 +1,128 @@
-/* ----------------------------------------
-   Intro section (page introduction area)
------------------------------------------ */
+/* ==========================================================
+   GMCA Parking Portal – Start Page Styles
+   Author: ChatGPT for GMCA
+   ========================================================== */
+
+/* ----------------------------
+   Base layout and typography
+----------------------------- */
+body {
+  background-color: #f8f8f8;
+  font-family: "GDS Transport", Arial, sans-serif;
+  color: #0b0c0c;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+/* ----------------------------
+   Header (GMCA top section)
+----------------------------- */
+.gmca-header {
+  background-color: #502D63; /* GMCA purple */
+  color: #ffffff;
+  padding: 1rem 0;
+}
+
+.gmca-header__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.gmca-logo {
+  height: 45px;
+  width: auto;
+  margin-right: 1rem;
+}
+
+.gmca-header__container h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* ----------------------------
+   Search bar
+----------------------------- */
+.gmca-search-bar {
+  background-color: #3B6E83; /* GMCA teal */
+  padding: 0.75rem 0;
+}
+
+.gmca-search-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.gmca-search-container form {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+}
+
+.gmca-search-container input {
+  flex-grow: 1;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.gmca-search-container button {
+  background-color: #305c6d;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.gmca-search-container button:hover {
+  background-color: #234955;
+}
+
+/* ----------------------------
+   Breadcrumb navigation
+----------------------------- */
+.gmca-breadcrumb {
+  max-width: 1100px;
+  margin: 1rem auto;
+  padding: 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+.gmca-breadcrumb a {
+  color: #3B6E83;
+  text-decoration: underline;
+}
+
+.gmca-breadcrumb a:hover {
+  text-decoration: none;
+}
+
+/* ----------------------------
+   Intro section (main content)
+----------------------------- */
+.gmca-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
 
 .gmca-intro {
   max-width: 720px;
@@ -13,7 +135,6 @@
   text-align: left;
 }
 
-/* Main heading */
 .gmca-intro h2 {
   font-size: 1.9rem;
   font-weight: 700;
@@ -21,35 +142,106 @@
   margin-bottom: 0.5rem;
 }
 
-/* Subheading */
 .gmca-intro h3 {
   font-size: 1.25rem;
-  color: #3B6E83; /* GMCA teal */
+  color: #3B6E83;
   margin-bottom: 1rem;
   font-weight: 700;
 }
 
-/* Body text */
 .gmca-intro p {
   font-size: 1.05rem;
   line-height: 1.7;
   color: #0b0c0c;
-  margin: 0;
 }
 
-/* Optional top separator (for desktop polish) */
-@media (min-width: 700px) {
-  .gmca-intro {
-    padding-left: 1.75rem;
-  }
+/* ----------------------------
+   Buttons
+----------------------------- */
+.gmca-buttons {
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-bottom: 3rem;
 }
 
-/* Responsive layout */
+.gmca-button {
+  display: inline-block;
+  margin: 0.5rem 1rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 6px;
+  color: #ffffff;
+  border-bottom: 3px solid #0b0c0c;
+  transition: all 0.2s ease;
+  letter-spacing: 0.5px;
+}
+
+.gmca-button.teal {
+  background-color: #3B6E83;
+}
+
+.gmca-button.teal:hover {
+  background-color: #2d5564;
+  transform: translateY(-1px);
+}
+
+.gmca-button.purple {
+  background-color: #502D63;
+}
+
+.gmca-button.purple:hover {
+  background-color: #3f2251;
+  transform: translateY(-1px);
+}
+
+/* ----------------------------
+   Footer
+----------------------------- */
+.gmca-footer {
+  background-color: #ffffff;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #505a5f;
+  padding: 2rem 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* ----------------------------
+   Responsive adjustments
+----------------------------- */
 @media (max-width: 700px) {
+  .gmca-header__container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gmca-header__container h1 {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+  }
+
+  .gmca-search-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gmca-search-container form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .gmca-search-container input,
+  .gmca-search-container button {
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+
   .gmca-intro {
     margin: 1rem;
     padding: 1rem;
-    border-left-width: 4px;
   }
 
   .gmca-intro h2 {
@@ -62,5 +254,12 @@
 
   .gmca-intro p {
     font-size: 1rem;
+  }
+
+  .gmca-button {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0.75rem auto;
   }
 }
