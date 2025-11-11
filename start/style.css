@@ -100,6 +100,31 @@ body {
     width: 100%;
   }
 }
+/* -------------------------------
+   Equal-width buttons on start page
+--------------------------------*/
+.gmca-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.gmca-button {
+  min-width: 180px; /* ensures same button width */
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .gmca-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gmca-button {
+    width: 100%;
+    max-width: 320px;
+  }
+}
 
 /* -------------------------------
    Breadcrumb
