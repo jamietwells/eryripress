@@ -403,3 +403,21 @@ body {
   outline: 3px solid #a6d2de;
   box-shadow: 0 0 0 3px rgba(59, 110, 131, 0.2);
 }
+
+/* -------------------------------
+   Payment page refinements
+--------------------------------*/
+.info-box {
+  background-color: #F5F6FA;
+  border-left: 6px solid #3B6E83;
+  padding: 0.75rem 1.25rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+}
+
+.reduced-text {
+  color: #505a5f;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
