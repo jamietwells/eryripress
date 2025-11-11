@@ -19,7 +19,7 @@ body {
 --------------------------------*/
 .gmca-header {
   background-color: #502D63; /* GMCA purple */
-  padding: 1rem 0 0.25rem;
+  padding: 1rem 0 0;
 }
 
 .gmca-header__container {
@@ -37,18 +37,20 @@ body {
 }
 
 /* -------------------------------
-   Search Bar (new line, aligned left)
+   Search Bar (below logo, aligned with content)
 --------------------------------*/
 .gmca-search-bar {
   background-color: #502D63;
-  padding: 0.5rem 1rem 1rem;
+  padding: 0.5rem 0 1rem;
 }
 
 .gmca-search-container {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  max-width: 500px;
+  max-width: 1000px;
+  margin: 0 auto; /* centers to match content width */
+  padding: 0 1rem;
 }
 
 .gmca-search-container input {
