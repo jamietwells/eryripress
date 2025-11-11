@@ -5,10 +5,8 @@
   <title>GMCA – Pay or Appeal a Parking Fine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- GOV.UK Frontend CSS (includes GDS Transport font) -->
+  <!-- GOV.UK Frontend CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/govuk-frontend@4.13.0/dist/govuk-frontend-4.13.0.min.css">
-
-  <!-- Custom GMCA Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,58 +14,52 @@
   <!-- Header -->
   <header class="gmca-header">
     <div class="gmca-header__container">
-      <a href="https://www.greatermanchester-ca.gov.uk/" target="_blank" rel="noopener" class="gmca-header__logo-link">
+      <a href="https://www.greatermanchester-ca.gov.uk/" target="_blank" rel="noopener">
         <img src="https://eryripress.co.uk/icon3.svg" alt="GMCA logo" class="gmca-logo">
       </a>
-    </div>
-  </header>
+      <h1 class="gmca-header__title">GMCA</h1>
 
-  <!-- Search bar -->
-  <div class="gmca-search-bar">
-    <div class="gmca-search-container">
-      <form id="gmca-search-form">
+      <!-- Search -->
+      <form id="gmca-search-form" class="gmca-search-container">
         <input id="gmca-search-input" type="text" placeholder="Search Greater Manchester Combined Authority...">
         <button type="submit">Search</button>
       </form>
     </div>
-  </div>
+  </header>
 
   <!-- Breadcrumb -->
-  <nav class="gmca-breadcrumb" aria-label="Breadcrumb">
+  <nav class="gmca-breadcrumb">
     <a href="https://www.greatermanchester-ca.gov.uk/">Home</a> ›
     <span>Pay or appeal a parking fine</span>
   </nav>
 
   <!-- Main content -->
-  <div class="govuk-width-container">
-    <main class="gmca-main" id="main-content">
-      <div class="gmca-intro">
-        <h2>Civil parking enforcement</h2>
-        <h3>Pay or appeal a parking or bus lane fine</h3>
-        <p>You can use this service to pay or appeal a Penalty Charge Notice (PCN) issued within Greater Manchester.</p>
-      </div>
+  <main class="gmca-main">
+    <div class="gmca-intro">
+      <h2>Civil parking enforcement</h2>
+      <h3>Pay or appeal a parking or bus lane fine</h3>
+      <p>You can use this service to pay or appeal a Penalty Charge Notice (PCN) issued within Greater Manchester.</p>
+    </div>
 
-      <div class="gmca-buttons">
-        <a href="/portal/" class="gmca-button teal">PAY A FINE</a>
-        <a href="/appeal/" class="gmca-button purple">APPEAL</a>
-      </div>
-    </main>
-  </div>
+    <div class="gmca-buttons">
+      <a href="/portal/" class="gmca-button teal">PAY A FINE</a>
+      <a href="/appeal/" class="gmca-button purple">APPEAL</a>
+    </div>
+  </main>
 
   <!-- Footer -->
   <footer class="gmca-footer">
     <p>© Greater Manchester Combined Authority 2025</p>
   </footer>
 
-  <!-- JS for Search Redirect -->
+  <!-- Search redirect JS -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const searchForm = document.getElementById("gmca-search-form");
-      const searchInput = document.getElementById("gmca-search-input");
-
-      searchForm.addEventListener("submit", function (e) {
+      const form = document.getElementById("gmca-search-form");
+      const input = document.getElementById("gmca-search-input");
+      form.addEventListener("submit", function (e) {
         e.preventDefault();
-        const query = encodeURIComponent(searchInput.value.trim());
+        const query = encodeURIComponent(input.value.trim());
         if (query) {
           window.location.href = `https://www.greatermanchester-ca.gov.uk/search?Query=${query}`;
         }
