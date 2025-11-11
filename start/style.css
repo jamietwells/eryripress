@@ -350,3 +350,51 @@ body {
 .bottom-text a:hover {
   text-decoration: none;
 }
+/* -------------------------------
+   PCN Portal layout refinements
+--------------------------------*/
+.gmca-main {
+  text-align: left; /* ensures alignment like appeal page */
+}
+
+.lookup-card {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #0b0c0c;
+}
+
+.page-subtitle {
+  font-size: 1.05rem;
+  color: #3B6E83;
+  margin-bottom: 1.5rem;
+}
+
+/* Make the GOV.UK error summary visually fit the GMCA theme */
+.govuk-error-summary {
+  border-color: #3B6E83;
+}
+
+.govuk-error-summary__title {
+  color: #502D63;
+}
+
+.govuk-error-summary__list a {
+  color: #3B6E83;
+}
+
+/* Improve mobile spacing */
+@media (max-width: 700px) {
+  .lookup-card {
+    padding: 1.5rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+}
