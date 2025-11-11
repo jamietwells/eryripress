@@ -292,3 +292,61 @@ body {
     margin: 0.75rem 0;
   }
 }
+/* -------------------------------
+   PCN Portal styling
+--------------------------------*/
+.lookup-card,
+.gmca-main form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.form-hint {
+  font-size: 0.95rem;
+  color: #505a5f;
+  margin-bottom: 0.3rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #b1b4b6;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  border-color: #3B6E83;
+  outline: 3px solid #a6d2de;
+}
+
+.bottom-text {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  color: #0b0c0c;
+}
+
+.bottom-text a {
+  color: #502D63;
+  text-decoration: underline;
+}
+
+.bottom-text a:hover {
+  text-decoration: none;
+}
