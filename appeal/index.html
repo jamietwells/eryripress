@@ -8,23 +8,21 @@
   <!-- GOV.UK Frontend CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/govuk-frontend@4.13.0/dist/govuk-frontend-4.13.0.min.css">
 
-  <!-- Custom styles -->
-<link rel="stylesheet" href="../start/style.css">
+  <!-- Custom styles (shared with /start) -->
+  <link rel="stylesheet" href="../start/style.css">
 </head>
 
 <body>
   <!-- Header -->
   <header class="gmca-header">
     <div class="gmca-header__container">
-      <div class="gmca-header__left">
-        <a href="https://www.greatermanchester-ca.gov.uk/" target="_blank" rel="noopener">
-          <img src="https://eryripress.co.uk/icon3.svg" alt="GMCA logo" class="gmca-logo">
-        </a>
-      </div>
+      <a href="https://www.greatermanchester-ca.gov.uk/" target="_blank" rel="noopener">
+        <img src="https://eryripress.co.uk/icon3.svg" alt="GMCA logo" class="gmca-logo">
+      </a>
     </div>
   </header>
 
-  <!-- Search bar (matches /start page) -->
+  <!-- Search bar -->
   <div class="gmca-search-bar">
     <div class="gmca-search-container">
       <form id="gmca-search-form">
@@ -34,61 +32,77 @@
     </div>
   </div>
 
-<!-- Breadcrumb -->
-<nav class="gmca-breadcrumb" aria-label="Breadcrumb">
-  <a href="https://www.greatermanchester-ca.gov.uk/">Home</a> ›
-  <a href="https://www.gmcaparking.co.uk/start/">Parking Fines</a> ›
-  <span>Appeals</span>
-</nav>
+  <!-- Breadcrumb -->
+  <nav class="gmca-breadcrumb">
+    <a href="https://www.greatermanchester-ca.gov.uk/">Home</a> ›
+    <a href="/start/">Parking Fines</a> ›
+    <span>Appeals</span>
+  </nav>
+
+  <!-- JS for Search Redirect -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchForm = document.getElementById("gmca-search-form");
+      const searchInput = document.getElementById("gmca-search-input");
+
+      searchForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const query = encodeURIComponent(searchInput.value.trim());
+        if (query) {
+          window.location.href = `https://www.greatermanchester-ca.gov.uk/search?Query=${query}`;
+        }
+      });
+    });
+  </script>
 
   <!-- Main content -->
-  <div class="govuk-width-container">
-    <main class="gmca-main left-align">
-      <h2>Appeal a Penalty Charge Notice (PCN)</h2>
+  <main class="gmca-main">
+    <h2>Appeal a Penalty Charge Notice (PCN)</h2>
 
-      <p>If you have received a penalty charge notice (PCN) and want to appeal, you need to do this within <strong>28 days</strong>.</p>
+    <p>If you have received a penalty charge notice (PCN) and want to appeal, you need to do this within <strong>28 days</strong>.</p>
 
-      <p>If you make your appeal within <strong>14 days</strong> of the date of the PCN, then the discount rate will be re-offered if your appeal is unsuccessful.</p>
+    <p>If you make your appeal within <strong>14 days</strong> of the date of the PCN, then the discount rate will be re-offered if your appeal is unsuccessful.</p>
 
-      <div class="govuk-inset-text">
-        <p><strong>Send your appeal by email to:</strong> <a href="mailto:appeals@gmcaparking.co.uk" class="govuk-link">appeals@gmcaparking.co.uk</a></p>
-        <p>We are unable to advise on appeals or process them over the phone.</p>
-        <p><em>Please note:</em> a penalty may take up to 24 working hours to appear on our online system.</p>
-      </div>
+    <div class="govuk-inset-text">
+      <p><strong>Send your appeal by email to:</strong> 
+        <a href="mailto:appeals@gmcaparking.co.uk" class="govuk-link">appeals@gmcaparking.co.uk</a>
+      </p>
+      <p>We are unable to advise on appeals or process them over the phone.</p>
+      <p><em>Please note:</em> a penalty may take up to 24 working hours to appear on our online system.</p>
+    </div>
 
-      <h3>Make an appeal</h3>
-      <p>If your appeal has been rejected and you still want to appeal, then you must wait for the <strong>Notice to Owner (NtO)</strong> to make your next appeal.</p>
+    <h3>Make an appeal</h3>
+    <p>If your appeal has been rejected and you still want to appeal, then you must wait for the <strong>Notice to Owner (NtO)</strong> to make your next appeal.</p>
 
-      <h3>Notice to Owner (NtO)</h3>
-      <p>When you receive the NtO in the post you have two options available. You can make the payment or you can make a representation.</p>
-      <p>You need to make your representation within <strong>28 days</strong> of receiving the letter. We will look at your reasons and write to you with our decision.</p>
+    <h3>Notice to Owner (NtO)</h3>
+    <p>When you receive the NtO in the post you have two options available. You can make the payment or you can make a representation.</p>
+    <p>You need to make your representation within <strong>28 days</strong> of receiving the letter. We will look at your reasons and write to you with our decision.</p>
 
-      <h3>Notice of Rejection (NoR)</h3>
-      <p>You will receive a NoR if your representation against the NtO is unsuccessful. You still have the option of appealing; this must be made to the <strong>Traffic Penalty Tribunal (TPT)</strong> within 28 days of the NoR.</p>
-      <p>They are separate from ourselves and will look at your next appeal independently.</p>
+    <h3>Notice of Rejection (NoR)</h3>
+    <p>You will receive a NoR if your representation against the NtO is unsuccessful. You still have the option of appealing; this must be made to the <strong>Traffic Penalty Tribunal (TPT)</strong> within 28 days of the NoR.</p>
+    <p>They are separate from ourselves and will look at your next appeal independently.</p>
 
-      <h3>Charge Certificate</h3>
-      <p>If you have received a Charge Certificate you can no longer appeal the charge. You can pay at the current rate or you can wait for the <strong>Order of Recovery (OfR)</strong>.</p>
+    <h3>Charge Certificate</h3>
+    <p>If you have received a Charge Certificate you can no longer appeal the charge. You can pay at the current rate or you can wait for the <strong>Order of Recovery (OfR)</strong>.</p>
 
-      <h3>Order of Recovery</h3>
-      <p>When you receive the OfR you can no longer appeal the charge. You can pay at the current rate or you can make a <strong>witness statement</strong> to the Traffic Enforcement Centre (TEC).</p>
-      <p>You can make a witness statement to the TEC based on four grounds:</p>
+    <h3>Order of Recovery</h3>
+    <p>When you receive the OfR you can no longer appeal the charge. You can pay at the current rate or you can make a <strong>witness statement</strong> to the Traffic Enforcement Centre (TEC).</p>
+    <p>You can make a witness statement to the TEC based on four grounds:</p>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>You did not receive the PCN or NtO</li>
-        <li>You made representations to us but did not receive a response</li>
-        <li>You made an appeal to TPT but did not receive a response</li>
-        <li>You paid the PCN</li>
-      </ul>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>You did not receive the PCN or NtO</li>
+      <li>You made representations to us but did not receive a response</li>
+      <li>You made an appeal to TPT but did not receive a response</li>
+      <li>You paid the PCN</li>
+    </ul>
 
-      <h3>Enforcement agents (bailiffs)</h3>
-      <p>If your PCN has been sent to enforcement agents, then you need to speak to them or contact the TEC as described above.</p>
+    <h3>Enforcement agents (bailiffs)</h3>
+    <p>If your PCN has been sent to enforcement agents, then you need to speak to them or contact the TEC as described above.</p>
 
-      <div class="gmca-buttons" style="margin-top: 3rem;">
-        <a href="/portal/" class="gmca-button teal">PAY A FINE</a>
-      </div>
-    </main>
-  </div>
+    <div class="gmca-buttons">
+      <a href="/portal/" class="gmca-button teal">PAY A FINE</a>
+    </div>
+  </main>
 
   <!-- Footer -->
   <footer class="gmca-footer">
