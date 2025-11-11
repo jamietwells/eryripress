@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>GMCA – Pay a Parking or Bus Lane Fine</title>
+  <title>GMCA – Pay PCN Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- GOV.UK Frontend CSS -->
@@ -13,7 +13,8 @@
 </head>
 
 <body>
-  <!-- Header -->
+
+  <!-- GMCA Header -->
   <header class="gmca-header">
     <div class="gmca-header__container">
       <a href="https://www.greatermanchester-ca.gov.uk/" target="_blank" rel="noopener">
@@ -35,35 +36,18 @@
   <!-- Breadcrumb -->
   <nav class="gmca-breadcrumb">
     <a href="https://www.greatermanchester-ca.gov.uk/">Home</a> ›
-    <a href="/start/">Parking Fines</a> ›
-    <span>Pay a Fine</span>
+    <span>Parking Fines</span>
   </nav>
-
-  <!-- Search redirect JS -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const searchForm = document.getElementById("gmca-search-form");
-      const searchInput = document.getElementById("gmca-search-input");
-
-      searchForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const query = encodeURIComponent(searchInput.value.trim());
-        if (query) {
-          window.location.href = `https://www.greatermanchester-ca.gov.uk/search?Query=${query}`;
-        }
-      });
-    });
-  </script>
 
   <!-- Main content -->
   <main class="govuk-width-container" id="main-content">
-    <div class="lookup-card gmca-main">
+    <div class="lookup-card">
 
-      <h2 class="page-title">Penalty Charge Notice Portal</h2>
+      <h1 class="page-title">Penalty Charge Notice Portal</h1>
       <p class="page-subtitle">Enter your Penalty Charge Notice (PCN) number and vehicle registration.</p>
 
       <form id="pcn-form" novalidate>
-        <!-- GOV.UK style error summary -->
+        <!-- Error summary -->
         <div id="error-summary" class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary" style="display:none;">
           <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
           <div class="govuk-error-summary__body">
@@ -75,34 +59,40 @@
         <div class="form-group">
           <label for="PCN" class="form-label">PCN number</label>
           <div class="form-hint">Your PCN number starts with AW followed by 8 digits (example: AW12345678).</div>
-          <input class="form-input govuk-input" id="PCN" name="PCN" type="text" maxlength="10" autocomplete="off" value="AW">
+          <input class="form-input" id="PCN" name="PCN" type="text" maxlength="10" autocomplete="off" value="AW">
         </div>
 
         <!-- Registration number -->
         <div class="form-group">
           <label for="VRM" class="form-label">Vehicle registration number</label>
           <div class="form-hint">Enter your vehicle’s registration number (number plate).</div>
-          <input class="form-input govuk-input" id="VRM" name="VRM" type="text" maxlength="24" autocomplete="off" required>
+          <input class="form-input" id="VRM" name="VRM" type="text" maxlength="24" autocomplete="off" required>
         </div>
 
-        <button type="submit" class="govuk-button">Search</button>
+        <button type="submit" class="gmca-button teal">Search</button>
       </form>
 
       <div class="bottom-text">
         <p>© Greater Manchester Combined Authority 2025</p>
-        <p>
-          <a href="https://www.greatermanchester-ca.gov.uk/who-we-are/accounts-transparency-and-governance/accessibility-statement/"
-             target="_blank" rel="noopener noreferrer">
-            Our accessibility statement
-          </a>
-        </p>
       </div>
     </div>
   </main>
 
-  <!-- Form validation -->
   <script>
+    // Search bar behavior
     document.addEventListener("DOMContentLoaded", function() {
+      const searchForm = document.getElementById("gmca-search-form");
+      const searchInput = document.getElementById("gmca-search-input");
+
+      searchForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const query = encodeURIComponent(searchInput.value.trim());
+        if (query) {
+          window.location.href = `https://www.greatermanchester-ca.gov.uk/search?Query=${query}`;
+        }
+      });
+
+      // PCN form validation
       const form = document.getElementById("pcn-form");
       const errorSummary = document.getElementById("error-summary");
       const errorList = document.getElementById("error-list");
@@ -130,7 +120,7 @@
           return;
         }
 
-        // Redirect to payment page
+        // Redirect to payment
         const payUrl = `/pay?pcn=${encodeURIComponent(pcn)}&vrm=${encodeURIComponent(vrm)}`;
         window.location.href = payUrl;
       });
@@ -142,7 +132,6 @@
           li.textContent = msg;
           errorList.appendChild(li);
         });
-
         errorSummary.style.display = "block";
         errorSummary.focus();
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -150,9 +139,5 @@
     });
   </script>
 
-  <!-- Footer -->
-  <footer class="gmca-footer">
-    <p>© Greater Manchester Combined Authority 2025</p>
-  </footer>
 </body>
 </html>
