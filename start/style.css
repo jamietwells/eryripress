@@ -87,7 +87,6 @@ body {
   background-color: #305c6d;
 }
 
-/* ✅ close this media query properly */
 @media (max-width: 700px) {
   .gmca-search-container form {
     flex-direction: column;
@@ -98,31 +97,6 @@ body {
   .gmca-search-container input,
   .gmca-search-container button {
     width: 100%;
-  }
-}
-/* -------------------------------
-   Equal-width buttons on start page
---------------------------------*/
-.gmca-buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.gmca-button {
-  min-width: 180px; /* ensures same button width */
-  text-align: center;
-}
-
-@media (max-width: 700px) {
-  .gmca-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .gmca-button {
-    width: 100%;
-    max-width: 320px;
   }
 }
 
@@ -214,6 +188,61 @@ body {
 }
 
 /* -------------------------------
+   Buttons
+--------------------------------*/
+.gmca-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* GOV.UK rhythm spacing */
+  margin-top: 3rem;
+}
+
+.gmca-button {
+  display: inline-block;
+  min-width: 180px; /* ensures consistent width */
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #fff;
+  border-bottom: 3px solid #0b0c0c;
+  text-align: center;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Teal */
+.gmca-button.teal {
+  background-color: #3B6E83;
+}
+.gmca-button.teal:hover {
+  background-color: #305c6d;
+}
+
+/* Purple */
+.gmca-button.purple {
+  background-color: #502D63;
+}
+.gmca-button.purple:hover {
+  background-color: #3e2350;
+}
+
+@media (max-width: 700px) {
+  .gmca-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .gmca-button {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* -------------------------------
    Inset text (appeal info box)
 --------------------------------*/
 .govuk-inset-text {
@@ -235,44 +264,6 @@ body {
 }
 
 /* -------------------------------
-   Buttons
---------------------------------*/
-.gmca-buttons {
-  text-align: center;
-  margin-top: 3rem;
-}
-
-.gmca-button {
-  display: inline-block;
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 4px;
-  color: #fff;
-  border-bottom: 3px solid #0b0c0c;
-  transition: background-color 0.2s ease-in-out;
-  margin: 0.5rem;
-}
-
-/* Teal */
-.gmca-button.teal {
-  background-color: #3B6E83;
-}
-.gmca-button.teal:hover {
-  background-color: #305c6d;
-}
-
-/* Purple */
-.gmca-button.purple {
-  background-color: #502D63;
-}
-.gmca-button.purple:hover {
-  background-color: #3e2350;
-}
-
-/* -------------------------------
    Footer
 --------------------------------*/
 .gmca-footer {
@@ -285,38 +276,6 @@ body {
   border-top: 1px solid #dcdcdc;
 }
 
-/* -------------------------------
-   Responsive (mobile)
---------------------------------*/
-@media (max-width: 700px) {
-  .gmca-header__container {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 1rem;
-  }
-
-  .gmca-logo {
-    height: 50px;
-  }
-
-  .gmca-main {
-    padding: 1.5rem 1rem;
-  }
-
-  .gmca-main h2 {
-    font-size: 1.5rem;
-  }
-
-  .gmca-main h3 {
-    font-size: 1.15rem;
-  }
-
-  .gmca-button {
-    width: 100%;
-    display: block;
-    margin: 0.75rem 0;
-  }
-}
 /* -------------------------------
    PCN Portal styling
 --------------------------------*/
@@ -358,6 +317,7 @@ body {
 .form-input:focus {
   border-color: #3B6E83;
   outline: 3px solid #a6d2de;
+  box-shadow: 0 0 0 3px rgba(59, 110, 131, 0.2);
 }
 
 .bottom-text {
@@ -375,6 +335,7 @@ body {
 .bottom-text a:hover {
   text-decoration: none;
 }
+
 /* -------------------------------
    PCN Portal layout refinements
 --------------------------------*/
@@ -400,7 +361,7 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* Make the GOV.UK error summary visually fit the GMCA theme */
+/* GOV.UK error summary styling */
 .govuk-error-summary {
   border-color: #3B6E83;
 }
@@ -411,22 +372,6 @@ body {
 
 .govuk-error-summary__list a {
   color: #3B6E83;
-}
-
-/* Improve mobile spacing */
-@media (max-width: 700px) {
-  .lookup-card {
-    padding: 1.5rem;
-  }
-
-  .page-title {
-    font-size: 1.5rem;
-  }
-}
-.form-input:focus {
-  border-color: #3B6E83;
-  outline: 3px solid #a6d2de;
-  box-shadow: 0 0 0 3px rgba(59, 110, 131, 0.2);
 }
 
 /* -------------------------------
@@ -445,4 +390,31 @@ body {
   font-size: 0.95rem;
   margin-top: 1rem;
   margin-bottom: 2rem;
+}
+
+/* -------------------------------
+   Mobile refinements
+--------------------------------*/
+@media (max-width: 700px) {
+  .gmca-header__container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1rem;
+  }
+
+  .gmca-logo {
+    height: 50px;
+  }
+
+  .gmca-main {
+    padding: 1.5rem 1rem;
+  }
+
+  .lookup-card {
+    padding: 1.5rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
 }
