@@ -37,7 +37,7 @@ body {
 }
 
 /* -------------------------------
-   Search Bar (below logo, aligned left)
+  Search Bar (identical across all pages)
 --------------------------------*/
 .gmca-search-bar {
   background-color: #502D63;
@@ -51,35 +51,54 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 1rem;
-  flex-wrap: wrap;
+}
+
+.gmca-search-container form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
 }
 
 .gmca-search-container input {
   flex: 1;
-  padding: 0.75rem 1rem;
+  padding: 0.8rem 1rem;
   font-size: 1rem;
   border: none;
-  border-radius: 3px;
+  border-radius: 4px;
   background-color: #fff;
-  min-width: 350px;
-  max-width: 700px;
+  line-height: 1;
 }
 
 .gmca-search-container button {
   background-color: #3B6E83;
   color: #fff;
   border: none;
-  padding: 0.75rem 1.5rem;
+  padding: 0.8rem 1.25rem;
   font-weight: 700;
   text-transform: uppercase;
-  border-radius: 3px;
+  border-radius: 4px;
   cursor: pointer;
-  white-space: nowrap;
+  transition: background-color 0.2s ease-in-out;
+  line-height: 1;
 }
 
 .gmca-search-container button:hover {
   background-color: #305c6d;
 }
+
+/* Responsive mobile layout */
+@media (max-width: 700px) {
+  .gmca-search-container form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .gmca-search-container input,
+  .gmca-search-container button {
+    width: 100%;
+  }
 
 /* -------------------------------
    Breadcrumb
