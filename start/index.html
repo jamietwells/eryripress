@@ -1,75 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>GMCA – Pay or Appeal a Parking Fine</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-overlay"></div>
 
-  <!-- GOV.UK Frontend CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/govuk-frontend@4.13.0/dist/govuk-frontend-4.13.0.min.css">
+  <div class="hero-content">
 
-  <!-- Custom styles -->
-  <link rel="stylesheet" href="./style.css">
-</head>
+    <span class="campaign-tag">
+      TENDRING DEMOCRACY PROJECT
+    </span>
 
-<body>
-  <!-- Header -->
-  <header class="gmca-header">
-    <div class="gmca-header__container">
-      <a href="https://www.greatermanchester-ca.gov.uk/" target="_blank" rel="noopener">
-        <img src="https://eryripress.co.uk/icon3.svg" alt="GMCA logo" class="gmca-logo">
-      </a>
+    <h1 class="hero-title">
+      <span>UNSEAT</span>
+      <span>FARAGE</span>
+    </h1>
+
+    <p class="hero-text">
+      Clacton deserves an MP who works for local people every day.
+      Help us build the campaign capable of defeating Nigel Farage at
+      the next General Election.
+    </p>
+
+    <div class="fundraiser">
+        <div class="amount">
+            £100,000 TARGET
+        </div>
+
+        <div class="progress">
+            <div class="progress-fill"></div>
+        </div>
+
+        <p class="raised">
+            Every donation helps reach more voters.
+        </p>
     </div>
-  </header>
 
-  <!-- Search bar -->
-  <div class="gmca-search-bar">
-    <div class="gmca-search-container">
-      <form id="gmca-search-form">
-        <input id="gmca-search-input" type="text" placeholder="Search The Site">
-        <button type="submit">Search</button>
-      </form>
+    <div class="hero-buttons">
+        <a href="/donate/" class="donate-btn">
+            DONATE NOW →
+        </a>
+
+        <a href="/volunteer/" class="volunteer-btn">
+            VOLUNTEER
+        </a>
     </div>
+
   </div>
-
-  <!-- Breadcrumb -->
-  <nav class="gmca-breadcrumb">
-    <a href="https://www.greatermanchester-ca.gov.uk/">Home</a> ›
-    <span>Parking Fines</span>
-  </nav>
-
-  <!-- JS for Search Redirect -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const searchForm = document.getElementById("gmca-search-form");
-      const searchInput = document.getElementById("gmca-search-input");
-
-      searchForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const query = encodeURIComponent(searchInput.value.trim());
-        if (query) {
-          window.location.href = `https://www.greatermanchester-ca.gov.uk/search?Query=${query}`;
-        }
-      });
-    });
-  </script>
-
-  <!-- Main content -->
-  <main class="gmca-main">
-    <h2>Civil parking enforcement</h2>
-
-    <h3>Pay or appeal a parking or bus lane fine</h3>
-    <p>You can use this service to pay or appeal a Penalty Charge Notice (PCN) issued within Greater Manchester.</p>
-
-    <div class="gmca-buttons">
-      <a href="/portal/" class="gmca-button teal">PAY A FINE</a>
-      <a href="/appeal/" class="gmca-button purple">APPEAL</a>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="gmca-footer">
-    <p>© Greater Manchester Combined Authority 2026</p>
-  </footer>
-</body>
-</html>
+</section>
